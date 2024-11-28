@@ -1,0 +1,19 @@
+// GLOBALS //
+
+@use "./Base/globals";
+
+// RESET CSS //
+
+@use "./Base/resetCss";
+
+// LAYOUT //
+
+@use "./Layout/header.scss";
+
+// HOMEPAGE //
+
+@use "./Pages/home/mainSection";
+
+// COMPONENTS //
+
+@use "./Components/buttons";

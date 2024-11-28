@@ -1,0 +1,25 @@
+header {
+  background-color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 50px;
+  .headerLogo {
+    width: 20%;
+    height: auto;
+  }
+  #user-nav,
+  #accompte-nav {
+    text-wrap: nowrap;
+    display: flex;
+    column-gap: 30px;
+    font-size: 20px;
+    font-weight: 200;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
