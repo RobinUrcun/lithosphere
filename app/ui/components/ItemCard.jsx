@@ -6,7 +6,7 @@ export default function ItemCard({ title, imgUrl, url }) {
   return (
     <div className="itemCardContainer">
       <Link href={url}>
-        <Image src={imgUrl} fill alt={`Visitez ${title}`} />
+        <Image src={imgUrl} height={300} width={300} alt={`Visitez ${title}`} />
       </Link>
       <h3>{title}</h3>
     </div>

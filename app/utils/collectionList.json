@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Amethystes",
+    "imgUrl": "/assets/collections/amethyste.jpg",
+    "url": "/boutique/amethyste"
+  },
+  {
+    "title": "Bijoux",
+    "imgUrl": "/assets/collections/jewel.jpg",
+    "url": "/boutique/bijoux"
+  },
+  {
+    "title": "Creasy Lace",
+    "imgUrl": "/assets/collections/creasyLace.jpg",
+    "url": "/boutique/creasyLace"
+  }
+]

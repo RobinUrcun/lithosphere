@@ -8,11 +8,14 @@
 
 // LAYOUT //
 
-@use "./Layout/header.scss";
+@use "./Layout/header";
+@use "./Layout/footer";
 
 // HOMEPAGE //
 
 @use "./Pages/home/mainSection";
+@use "./Pages/home/collections";
+@use "./Pages/home/learnMore";
 
 // COMPONENTS //
 

@@ -13,8 +13,8 @@ export default function Header() {
       <Image
         className="headerLogo"
         src={logo}
-        width={700}
-        height={243}
+        width={350}
+        height={120}
         alt={""}
         priority
       />

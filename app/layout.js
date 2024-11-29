@@ -12,6 +12,7 @@ export const metadata = {
 
 // Import Components //
 import Header from "./ui/layout/Header";
+import Footer from "./ui/layout/Footer";
 
 export default function RootLayout({ children }) {
   return (
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
