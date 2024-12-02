@@ -1,0 +1,7 @@
+.boutiqueNav {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}

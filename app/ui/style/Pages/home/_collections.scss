@@ -15,42 +15,5 @@
     align-items: center;
     column-gap: 60px;
     padding: 60px 10%;
-    .itemCardContainer {
-      flex: 1;
-      a {
-        display: block;
-        position: relative;
-        img {
-          width: 100%;
-          height: auto;
-          max-height: 300px;
-          max-width: 300px;
-          opacity: 0.9;
-        }
-        &:hover::after {
-          opacity: 1;
-          transition: opacity 1s;
-        }
-        &::after {
-          opacity: 0;
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: radial-gradient(
-            circle,
-            rgba(0, 0, 0, 0) 60%,
-            rgba(0, 0, 0, 0.8) 100%
-          );
-        }
-      }
-      h3 {
-        margin-top: 10px;
-        font-size: clamp(15px, 1.5vw, 25px);
-        font-weight: 500;
-      }
-    }
   }
 }

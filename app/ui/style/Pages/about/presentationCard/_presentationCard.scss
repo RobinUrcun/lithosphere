@@ -1,0 +1,36 @@
+.presentationCard {
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  padding: 40px;
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: calc(100% - 80px);
+    left: 40px;
+    height: 1px;
+    margin: auto;
+    background-color: rgb(218, 216, 216);
+  }
+  &:last-child::after {
+    width: 0;
+  }
+  img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+  }
+  .presentationCardInfo {
+    h2 {
+      font-size: clamp(25px, 2vw, 30px);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: clamp(16px, 1.3vw, 22px);
+      font-weight: 300;
+    }
+  }
+}

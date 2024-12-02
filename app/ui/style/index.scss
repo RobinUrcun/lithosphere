@@ -11,12 +11,39 @@
 @use "./Layout/header";
 @use "./Layout/footer";
 
+// COMPONENTS //
+
+@use "./Components/buttons";
+@use "./Components/itemCard";
+
 // HOMEPAGE //
 
 @use "./Pages/home/mainSection";
 @use "./Pages/home/collections";
 @use "./Pages/home/learnMore";
 
-// COMPONENTS //
+// BOUTIQUE //
 
-@use "./Components/buttons";
+@use "./Pages/boutique/boutique";
+@use "./Pages/boutique/nav/nav";
+@use "./Pages/boutique/nav/navCategorie";
+@use "./Pages/boutique/banner/shopBanner";
+@use "./Pages/boutique/productCard/productCard";
+@use "./Pages/boutique/product/product";
+
+// ABOUT //
+
+@use "./Pages/about/about";
+@use "./Pages/about/banner/aboutBanner";
+@use "./Pages/about/presentationCard/presentationCard";
+
+// CART //
+
+@use "./Pages/cart/cart";
+@use "./Pages/cart/productCart";
+@use "./Pages/cart/progressBar/progressBar";
+
+// LOGIN //
+
+@use "./Pages/auth/logIn/logIn";
+@use "./Pages/auth/inputCard/inputCard";

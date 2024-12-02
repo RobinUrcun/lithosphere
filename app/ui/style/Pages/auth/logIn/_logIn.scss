@@ -1,0 +1,17 @@
+.logInSection {
+  padding: 80px;
+  article {
+    h1 {
+      text-align: center;
+      font-size: clamp(30px, 3vw, 50px);
+      margin-bottom: 60px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 50px;
+    }
+  }
+}

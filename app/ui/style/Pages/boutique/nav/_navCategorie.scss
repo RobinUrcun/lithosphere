@@ -1,0 +1,31 @@
+.boutiqueNav .categorie {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .categorieTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    .rotate {
+      transform: rotate(90deg);
+    }
+  }
+  .categorieList {
+    overflow: hidden;
+    height: 0;
+    a {
+      padding: 5px;
+      color: black;
+      text-decoration: none;
+      font-weight: 400;
+    }
+  }
+  .open {
+    height: auto;
+  }
+}

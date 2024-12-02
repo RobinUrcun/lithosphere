@@ -1,15 +1,12 @@
 header {
   background-color: black;
-  padding: 20px;
+  padding: 22px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   column-gap: 50px;
-  .headerLogo {
-    width: 20%;
-    height: auto;
-  }
+
   #user-nav,
   #accompte-nav {
     text-wrap: nowrap;

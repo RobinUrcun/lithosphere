@@ -1,0 +1,18 @@
+.cartSection {
+  padding: 50px;
+  h1 {
+    font-size: clamp(35px, 3vw, 50px);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .mainButton {
+    box-sizing: content-box;
+    display: block;
+    margin: 50px auto;
+  }
+  .emptyCart {
+    padding: 30px;
+    filter: invert(99%);
+    text-align: center;
+  }
+}

@@ -1,0 +1,8 @@
+.aboutSection {
+  .aboutArticle {
+    padding: 30px 10%;
+    .presentationCard:nth-child(2) {
+      flex-direction: row-reverse;
+    }
+  }
+}
