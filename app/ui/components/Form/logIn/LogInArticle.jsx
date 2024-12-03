@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 
 // Import Router //
 import { useRouter } from "next/navigation";
@@ -10,7 +10,11 @@ import { fetchData } from "@/app/utils/functions/fetchData";
 // Import Components //
 import InputCard from "../inputCard/InputCard";
 
+// Import Context //
+import { AuthContext } from "@/app/context/AuthContext";
+
 export default function LogInArticle() {
+  const { setIsUserLog } = useContext(AuthContext);
   const router = useRouter();
   return (
     <form
@@ -33,7 +37,8 @@ export default function LogInArticle() {
           .then((data) => {
             localStorage.removeItem("cart");
             localStorage.setItem("userRole", data.userRole);
-            router.push("/");
+            setIsUserLog(true);
+            router.back();
           })
           .catch(console.log("erreur de co"));
       }}

@@ -3,8 +3,10 @@ export const fetchData = async function (url, options) {
     const response = await fetch(url, options);
     if (response.ok) {
       return response.json();
+    } else {
+      throw new Error();
     }
   } catch {
-    return "error";
+    throw new Error();
   }
 };

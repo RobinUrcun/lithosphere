@@ -18,5 +18,21 @@ header {
       color: white;
       text-decoration: none;
     }
+    .cross {
+      width: 30px;
+      transform: rotate(45deg);
+      position: relative;
+      .crossBar {
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        &:nth-child(1) {
+          transform: rotate(90deg);
+        }
+      }
+    }
   }
 }

@@ -20,15 +20,37 @@
 //   }
 // }
 
-export function addToCart(productId) {
-  const isUserConnected = localStorage.getItem("userToken");
-  if (!isUserConnected) {
+export async function addToCart(isUserLog, productId) {
+  if (!isUserLog) {
     let lsPanier = !localStorage.getItem("cart")
       ? []
       : JSON.parse(localStorage.getItem("cart"));
     lsPanier.includes(productId) ? null : lsPanier.push(productId);
     const panierJSON = JSON.stringify(lsPanier);
     localStorage.setItem("cart", panierJSON);
+  } else {
+    console.log("utilisateur log");
+
+    try {
+      const response = await fetch("http://localhost:3000/api/user/cart/", {
+        method: "PUT",
+        credentials: "include",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          articleId: productId,
+        }),
+      });
+      if (response.ok) {
+        return "succes";
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      throw new Error();
+    }
   }
   console.log(localStorage.getItem("cart"));
 }

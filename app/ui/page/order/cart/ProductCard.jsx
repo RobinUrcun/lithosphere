@@ -1,8 +1,18 @@
 import React from "react";
-// import { removeFromCart } from "@/app/utils/cart/removeFromCart";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function ProductCard({ product }) {
+// Remove from Cart Function //
+import { removeFromCart } from "@/app/utils/functions/cart/removeFromCart";
+
+export default function ProductCard({
+  product,
+  productList,
+  setProductList,
+  isUserLog,
+  setIsUserLog,
+}) {
+  const router = useRouter();
   return (
     <div className="cartWrapper">
       <div className="cartProductImgWrapper">
@@ -17,15 +27,24 @@ export default function ProductCard({ product }) {
         </Link>
 
         <div className="cartQty">
-          <div className="cartQtyWrapper">
+          <form className="cartQtyWrapper">
             <label htmlFor="quantity">Quantité :</label>
             <select id="quantity">
               <option value="1">1</option>
             </select>
-          </div>
+          </form>
           <div
             onClick={() => {
-              //   removeFromCart(product._id, userInfo);
+              removeFromCart(isUserLog, product._id)
+                .then(() => {
+                  setProductList(
+                    productList.filter((produit) => produit._id !== product._id)
+                  );
+                })
+                .catch((err) => {
+                  setIsUserLog(false);
+                  router.push("/auth/logIn");
+                });
             }}
             className="removeItem"
           >

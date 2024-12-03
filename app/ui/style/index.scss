@@ -39,9 +39,10 @@
 
 // CART //
 
-@use "./Pages/cart/cart";
-@use "./Pages/cart/productCart";
-@use "./Pages/cart/progressBar/progressBar";
+@use "./Pages/order/order";
+@use "./Pages/order/progressBar/progressBar";
+@use "./Pages/order/cart/cart";
+@use "./Pages/order/cart/productCart";
 
 // LOGIN //
 
