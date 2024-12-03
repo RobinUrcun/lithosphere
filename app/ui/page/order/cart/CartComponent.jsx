@@ -17,74 +17,51 @@ import { AuthContext } from "@/app/context/AuthContext";
 
 // Import Components //
 import ProductCard from "./ProductCard";
+import { OrderContext } from "@/app/context/OrderContext";
 
 export default function CartComponent() {
-  const router = useRouter();
   const { isUserLog, setIsUserLog } = useContext(AuthContext);
-  const [isLoading, setIsLoading] = useState(true); //
-  const [productList, setProductList] = useState([]);
-  const [totalCart, setTotalCart] = useState(0);
 
-  useEffect(() => {
-    console.log("useeffect", isUserLog);
+  const { productList, setProductList } = useContext(OrderContext);
+  const totalCart = productList.reduce(
+    (total, produit) => total + produit.price,
+    0
+  );
 
-    setIsLoading(true);
-    fetchCartProduct(isUserLog)
-      .then((data) => {
-        if (data) {
-          setProductList(data);
-        } else {
-          setProductList([]);
-        }
-      })
-      .catch(() => {
-        setIsUserLog(false);
-        router.push("/auth/logIn");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, [isUserLog]);
-
-  useEffect(() => {
-    setTotalCart(
-      productList.reduce((total, produit) => total + produit.price, 0)
-    );
-  }, [productList]);
   return (
     <React.Fragment>
-      {isLoading || !productList ? (
-        <p className="emptyCart">
-          <Image src={basketPicture} height={100} width={100} alt="" />
-        </p>
-      ) : productList.length ? (
-        productList.map((product, index) => (
-          <ProductCard
-            key={product._id + index}
-            product={product}
-            productList={productList}
-            setProductList={setProductList}
-            isUserLog={isUserLog}
-            setIsUserLog={setIsUserLog}
-          />
-        ))
-      ) : (
-        <p className="emptyCart">
-          <Image src={basketPicture} height={100} width={100} alt="" />
-        </p>
+      {productList.length > 0
+        ? productList.map((product, index) => (
+            <ProductCard
+              key={product._id + index}
+              product={product}
+              productList={productList}
+              setProductList={setProductList}
+              isUserLog={isUserLog}
+              setIsUserLog={setIsUserLog}
+            />
+          ))
+        : null}
+      {!totalCart ? null : (
+        <div className="totalRow">
+          Total :{" "}
+          {(totalCart / 100).toLocaleString("fr-FR", {
+            style: "currency",
+            currency: "EUR",
+            minimumFractionDigits: 2,
+          })}
+        </div>
       )}
-      <div className="totalRow">
-        Total :{" "}
-        {(totalCart / 100).toLocaleString("fr-FR", {
-          style: "currency",
-          currency: "EUR",
-          minimumFractionDigits: 2,
-        })}
-      </div>
       {isUserLog ? (
-        <Link className="mainButton" href={"/ModeDeLivraison"}>
-          Etape suivante
-        </Link>
+        !productList.length ? (
+          <Link className="mainButton" href={"/boutique"}>
+            Boutique
+          </Link>
+        ) : (
+          <Link className="mainButton" href={"/commande/livraison"}>
+            Etape suivante
+          </Link>
+        )
       ) : (
         <Link className="mainButton" href={"/auth/logIn"}>
           Se Connecter

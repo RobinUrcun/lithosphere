@@ -7,15 +7,15 @@
     &::after {
       content: "";
       position: absolute;
-      width: 75%;
+      width: 66%;
       height: 2px;
-      left: 12.5%;
+      left: 17%;
       top: 21px;
       background-color: rgba(134, 134, 134, 0.519);
       z-index: -1;
     }
     .step {
-      width: 25%;
+      width: 33%;
       min-width: 180px;
       display: flex;
       flex-direction: column;
@@ -38,7 +38,7 @@
       .stepTitle {
         color: rgba(27, 26, 26, 0.648);
       }
-      &:nth-child(1) .stepNbr {
+      .complete {
         background-color: rgb(63, 159, 63);
         color: white;
       }

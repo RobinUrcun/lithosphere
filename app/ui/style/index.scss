@@ -44,6 +44,13 @@
 @use "./Pages/order/cart/cart";
 @use "./Pages/order/cart/productCart";
 
+// DELIVERY //
+
+@use "./Pages/order/delivery/delivery";
+@use "./Pages/order/delivery/deliveryComponent/deliveryComponent";
+@use "./Pages/order/delivery/deliveryComponent/deliveryCard";
+@use "./Pages/order/mondialRelay/mondialRelay";
+
 // LOGIN //
 
 @use "./Pages/auth/logIn/logIn";

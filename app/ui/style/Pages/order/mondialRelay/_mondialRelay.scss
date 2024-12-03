@@ -1,0 +1,31 @@
+.mondialRelayArticle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  .widgetWrapper {
+    flex: 1;
+  }
+  .articleWrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    padding: 20px;
+  }
+  .formWrapper {
+    min-width: 300px;
+    h1 {
+      font-size: clamp(25px, 2.5vw, 40px);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      .inputCard {
+        width: 100%;
+      }
+    }
+  }
+}

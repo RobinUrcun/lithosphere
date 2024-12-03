@@ -17,7 +17,7 @@ export default function MainSection() {
           quatre coins du monde, avec une expertise particulière sur le Var et
           la Corse.
         </p>
-        <Link className="mainButton" href={""}>
+        <Link className="mainButton" href={"/boutique"}>
           Visiter la boutique
         </Link>
       </article>

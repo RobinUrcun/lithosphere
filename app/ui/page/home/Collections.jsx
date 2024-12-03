@@ -20,7 +20,7 @@ export default function Collections() {
         <ItemCard size={300} title="Bracelets" imgUrl={jewelPicture} />
         <ItemCard size={300} title="Creasy Lace" imgUrl={CreasyLacePicture} />
       </article>
-      <Link className="mainButton" href={""}>
+      <Link className="mainButton" href={"/boutique"}>
         Toute la boutique
       </Link>
     </section>

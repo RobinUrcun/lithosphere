@@ -19,7 +19,7 @@ export default function LearnMore() {
           privilégié aux trésors cachés du Var et de la Corse, en vous proposant
           une sélection exclusive de spécimens rares et authentiques.
         </p>
-        <Link className="mainButton" href={""}>
+        <Link className="mainButton" href={"/about"}>
           En savoir plus
         </Link>
       </article>
