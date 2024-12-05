@@ -24,12 +24,10 @@ export default function DeliveryCard({ title, image }) {
     console.log(totalCart);
 
     if (totalCart > 8000) {
-      setShippingPrice("Livraison offerte");
+      setShippingPrice(0);
     } else {
       if (title === "Mondial Relay") {
-        setShippingPrice(
-          `à partir de ${shippingFunctionMR(productList, "FR")}`
-        );
+        setShippingPrice(shippingFunctionMR(productList, "FR"));
       } else {
         setShippingPrice(shippingFunctionCM(productList, "FR"));
       }
@@ -45,7 +43,15 @@ export default function DeliveryCard({ title, image }) {
     >
       <Image src={image} width={150} height={150} alt={title} />
       <h2>{title}</h2>
-      <p>{shippingPrice}</p>
+      <p>
+        {!shippingPrice
+          ? "Offert"
+          : (shippingPrice / 100).toLocaleString("fr-FR", {
+              style: "currency",
+              currency: "EUR",
+              minimumFractionDigits: 2,
+            })}
+      </p>
     </Link>
   );
 }

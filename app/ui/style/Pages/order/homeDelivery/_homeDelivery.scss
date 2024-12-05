@@ -1,0 +1,52 @@
+.homeDeliveryArticle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  .articleWrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    padding: 20px;
+
+    .paiementWrapper {
+      flex: 1;
+      .priceCard {
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        text-align: end;
+        font-size: 20px;
+        color: rgb(69, 67, 67);
+      }
+    }
+    .formWrapper {
+      flex: 1;
+      min-width: 300px;
+      h1 {
+        font-size: clamp(25px, 2.5vw, 40px);
+        margin-bottom: 40px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        max-width: 400px;
+        .inputCard {
+          width: 100%;
+        }
+        .cityInfoWrapper {
+          display: flex;
+          flex-direction: row;
+          column-gap: 20px;
+          flex: 1;
+          .inputCard {
+            flex: 1;
+            min-width: 80px;
+          }
+        }
+      }
+    }
+  }
+}

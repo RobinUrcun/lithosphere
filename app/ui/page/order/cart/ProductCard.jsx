@@ -12,6 +12,8 @@ export default function ProductCard({
   isUserLog,
   setIsUserLog,
 }) {
+  console.log(product);
+
   const router = useRouter();
   return (
     <div className="cartWrapper">
@@ -22,7 +24,7 @@ export default function ProductCard({
         />
       </div>
       <div className="cartResponsiveWrapper">
-        <Link href={`/produit/${product._id}`}>
+        <Link href={`/boutique/${product.categories[0]}/${product._id}`}>
           <h2>{product.title}</h2>
         </Link>
 

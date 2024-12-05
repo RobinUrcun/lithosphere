@@ -41,10 +41,6 @@ export default function shippingFunctionCM(cartList, countryToSend) {
     (tranche) => totalWeight <= tranche.maxWeight
   );
 
-  const price = (tranche.price / 100).toLocaleString("fr-FR", {
-    style: "currency",
-    currency: "EUR",
-    minimumFractionDigits: 2,
-  });
+  const price = tranche.price;
   return price;
 }

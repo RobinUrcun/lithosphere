@@ -19,7 +19,7 @@ export default function NavAccompt() {
       <Link href={"/commande/panier"}>
         <Image src={basketIcon} alt="" width={35} height={35} />
       </Link>
-      <Link href={isUserLog ? "/monOmpotre" : "/auth/logIn"}>
+      <Link href={isUserLog ? "/mon-compte" : "/auth/logIn"}>
         <Image src={accountIcon} alt="" width={35} height={35} />
       </Link>
       {isUserLog ? (

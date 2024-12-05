@@ -1,10 +1,13 @@
 .inputCard {
-  width: 50%;
+  width: 100%;
   max-width: 400px;
-  min-width: 150px;
+  min-width: 300px;
   background-color: white;
   font-size: 20px;
   position: relative;
+  border: none;
+  color: rgb(95, 94, 94);
+
   &::after {
     content: "";
     display: block;
