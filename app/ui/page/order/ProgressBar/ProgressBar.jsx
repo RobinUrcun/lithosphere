@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function ProgressBar() {
   const pathname = usePathname();
-  // console.log(pathname);
+  console.log(pathname);
 
   return (
     <div className="progressBar">
@@ -17,7 +17,7 @@ export default function ProgressBar() {
         <div className={`step`}>
           <div
             className={`stepNbr  ${
-              pathname == "/commande/livraison" ? "complete" : null
+              pathname.includes("livraison") ? "complete" : null
             }`}
           >
             2
@@ -25,7 +25,15 @@ export default function ProgressBar() {
           <div className="stepTitle">Mode de livraison</div>
         </div>
         <div className="step">
-          <div className="stepNbr">3</div>
+          <div
+            className={`stepNbr ${
+              pathname.includes("mondialRelay") || pathname.includes("domicile")
+                ? "complete"
+                : null
+            }`}
+          >
+            3
+          </div>
           <div className="stepTitle">Informations de livraison</div>
         </div>
       </div>

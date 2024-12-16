@@ -10,7 +10,6 @@ import Paypal from "@/app/ui/components/Paypal/Paypal";
 // Import Link //
 import Link from "next/link";
 
-
 export default function page() {
   const [deliveryInfo, setDeliveryInfo] = useState({
     name: "",
@@ -42,7 +41,7 @@ export default function page() {
         <div className="formWrapper">
           <h1>Information de livraison</h1>
           <MondialRelayForm userInfo={userInfo} setUserInfo={setUserInfo} />
-          <PriceCard deliveryInfo={deliveryInfo} />
+          <PriceCard deliveryInfo={deliveryInfo} delivery="MR" />
           <Paypal deliveryInfo={deliveryInfo} userInfo={userInfo} />
         </div>
         <MondialRelay

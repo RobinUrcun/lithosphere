@@ -1,0 +1,14 @@
+.accountNavLink {
+  padding: 20px;
+  font-size: clamp(15px, 1.5vw, 25px);
+  border-radius: 10px;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.select {
+  background-color: rgba(5, 15, 207, 0.527);
+}

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import Components //
-import LogInArticle from "@/app/ui/components/Form/logIn/LogInArticle";
+import LogInForm from "@/app/ui/components/Form/logIn/LogInForm";
 
 // Import Link //
 import Link from "next/link";
@@ -11,7 +11,7 @@ export default function page() {
     <section className="logInSection">
       <article>
         <h1>Connexion</h1>
-        <LogInArticle />
+        <LogInForm />
         <Link href="/auth/forgetPassword">Mot de passe oublié?</Link>{" "}
         <Link href="/auth/signUp">Vous n'avez pas encore de compte ? </Link>
       </article>

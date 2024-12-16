@@ -45,7 +45,7 @@ export default function page() {
           />
         </div>
         <div className="paiementWrapper">
-          <PriceCard deliveryInfo={deliveryInfo} />
+          <PriceCard deliveryInfo={deliveryInfo} delivery="CP" />
           <Paypal deliveryInfo={deliveryInfo} userInfo={userInfo} />
         </div>
       </div>

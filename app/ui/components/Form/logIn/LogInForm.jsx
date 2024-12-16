@@ -13,7 +13,11 @@ import InputCard from "../inputCard/InputCard";
 // Import Context //
 import { AuthContext } from "@/app/context/AuthContext";
 
-export default function LogInArticle() {
+// Import Toast //
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export default function LogInForm() {
   const { setIsUserLog } = useContext(AuthContext);
   const router = useRouter();
   return (
@@ -34,13 +38,22 @@ export default function LogInArticle() {
           }),
           credentials: "include",
         })
-          .then((data) => {
+          .then(() => {
             localStorage.removeItem("cart");
-            localStorage.setItem("userRole", data.userRole);
             setIsUserLog(true);
-            router.back();
+            const previousPage = document.referrer;
+            if (
+              previousPage &&
+              (!previousPage.includes("404") || !previousPage.includes("admin"))
+            ) {
+              router.back();
+            } else {
+              router.push("/boutique");
+            }
           })
-          .catch(console.log("erreur de co"));
+          .catch(() => {
+            toast.error("Mail ou mot de passe invalide");
+          });
       }}
     >
       <InputCard type="mail" id="mail" placeholder="Votre adresse mail" />
@@ -51,6 +64,18 @@ export default function LogInArticle() {
       />
 
       <button className="mainButton">Se connecter</button>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
     </form>
   );
 }

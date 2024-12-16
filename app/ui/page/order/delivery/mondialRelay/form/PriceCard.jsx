@@ -5,9 +5,14 @@ import React, { useContext, useState, useEffect } from "react";
 
 // Shipping Functions //
 import shippingFunctionMR from "@/app/utils/shippingFunction/shippingFunctionMR";
+import shippingFunctionCM from "@/app/utils/shippingFunction/shippingFunctionCM";
 
-export default function PriceCard({ deliveryInfo }) {
+export default function PriceCard({ deliveryInfo, delivery }) {
+  console.log(delivery);
+
   const { productList, setProductList } = useContext(OrderContext);
+  console.log(productList);
+
   const [shippingPrice, setShippingPrice] = useState(0);
   const totalCart = productList.reduce(
     (total, produit) => total + produit.price,
@@ -17,7 +22,15 @@ export default function PriceCard({ deliveryInfo }) {
     if (totalCart > 8000) {
       setShippingPrice(0);
     } else {
-      setShippingPrice(shippingFunctionMR(productList, deliveryInfo.country));
+      if (delivery === "CP") {
+        console.log("CP");
+
+        setShippingPrice(shippingFunctionCM(productList, deliveryInfo.country));
+      } else {
+        console.log("MR");
+
+        setShippingPrice(shippingFunctionMR(productList, deliveryInfo.country));
+      }
     }
   }, [productList, deliveryInfo]);
 

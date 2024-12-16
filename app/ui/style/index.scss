@@ -15,6 +15,9 @@
 
 @use "./Components/buttons";
 @use "./Components/itemCard";
+@use "./Components/inputCard/inputCard";
+@use "./Components/accountNav/accountNav";
+@use "./Components/accountNav/linkCard/linkCard";
 
 // HOMEPAGE //
 
@@ -36,6 +39,13 @@
 @use "./Pages/about/about";
 @use "./Pages/about/banner/aboutBanner";
 @use "./Pages/about/presentationCard/presentationCard";
+
+// CONTACT //
+
+@use "./Pages/contact/contact";
+@use "./Pages/contact/form/contactForm";
+@use "./Pages/contact/aside/contactAside";
+@use "./Pages/contact/aside/infoCard/infoCard";
 
 // CART //
 
@@ -59,4 +69,12 @@
 // LOGIN //
 
 @use "./Pages/auth/logIn/logIn";
-@use "./Pages/auth/inputCard/inputCard";
+
+// SIGNUP //
+
+@use "./Pages/auth/signUp/signUp";
+
+// ADMIN //
+
+@use "./Pages/admin/admin";
+@use "./Pages/admin/form/createProduct";

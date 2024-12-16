@@ -18,24 +18,20 @@ export default function OrderProvider({ children }) {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    if (isUserLog) {
-      fetchCartProduct(isUserLog)
-        .then((data) => {
-          if (data) {
-            setProductList(data);
-          } else {
-            setProductList([]);
-          }
-        })
-        .catch(() => {
-          console.log("fasle user");
+    fetchCartProduct(isUserLog)
+      .then((data) => {
+        if (data) {
+          setProductList(data);
+        } else {
+          setProductList([]);
+        }
+      })
+      .catch(() => {
+        console.log("fasle user");
 
-          setIsUserLog(false);
-          router.push("/auth/logIn");
-        });
-    } else {
-      router.push("/auth/logIn");
-    }
+        setIsUserLog(false);
+        router.push("/auth/logIn");
+      });
   }, [isUserLog]);
   return (
     <OrderContext.Provider

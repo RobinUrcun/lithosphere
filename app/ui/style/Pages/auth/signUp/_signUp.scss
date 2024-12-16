@@ -1,0 +1,32 @@
+.signUpSection {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  article {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    h1 {
+      text-align: center;
+      font-size: clamp(30px, 3vw, 50px);
+      margin-bottom: 60px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 50px;
+    }
+    a {
+      margin-top: 20px;
+      font-weight: 300;
+      text-decoration: none;
+      color: rgb(95, 94, 94);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

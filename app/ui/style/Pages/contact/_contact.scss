@@ -1,0 +1,11 @@
+.contactSection {
+  padding: 50px;
+
+  .contactArticle {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    row-gap: 30px;
+    align-items: stretch;
+  }
+}

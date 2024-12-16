@@ -6,15 +6,11 @@ export const MondialWidget = (StateToSet, State) => {
     script.async = true;
     document.head.appendChild(script);
   }
-  // Charger jQuery en premier
   loadScript("https://code.jquery.com/jquery-3.7.1.min.js", () => {
-    // Charger le plugin Mondial Relay après que jQuery est chargé
     loadScript(
       "https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js",
       () => {
-        // Charger Leaflet.js
         loadScript("https://unpkg.com/leaflet/dist/leaflet.js", () => {
-          // Initialiser le widget après le chargement de tous les scripts
           $(document).ready(function () {
             $("#Zone_Widget").MR_ParcelShopPicker({
               TargetDisplayInfoPR: "#Retour_Widget",

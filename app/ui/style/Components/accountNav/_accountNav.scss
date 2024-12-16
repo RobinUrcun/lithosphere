@@ -1,0 +1,12 @@
+.accountNav {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  row-gap: 30px;
+  h1 {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: clamp(25px, 2.5vw, 30px);
+  }
+}
