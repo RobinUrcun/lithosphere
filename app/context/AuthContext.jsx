@@ -6,12 +6,18 @@ export const AuthContext = createContext({
   setIsUserLog: () => {},
 });
 
-export default function AuthProvider({ children, isUserConnected }) {
+export default function AuthProvider({ children, isUserConnected, tokenRole }) {
   const [isUserLog, setIsUserLog] = useState(isUserConnected);
+  const [userRole, setUserRole] = useState(tokenRole);
 
   return (
     <AuthContext.Provider
-      value={{ isUserLog: isUserLog, setIsUserLog: setIsUserLog }}
+      value={{
+        isUserLog: isUserLog,
+        setIsUserLog: setIsUserLog,
+        userRole: userRole,
+        setUserRole: setUserRole,
+      }}
     >
       {children}
     </AuthContext.Provider>

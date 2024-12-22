@@ -18,6 +18,7 @@
 @use "./Components/inputCard/inputCard";
 @use "./Components/accountNav/accountNav";
 @use "./Components/accountNav/linkCard/linkCard";
+@use "./Components/noProductFind/noProductFind";
 
 // HOMEPAGE //
 
@@ -29,6 +30,7 @@
 
 @use "./Pages/boutique/boutique";
 @use "./Pages/boutique/nav/nav";
+@use "./Pages/boutique/nav/navSearch";
 @use "./Pages/boutique/nav/navCategorie";
 @use "./Pages/boutique/banner/shopBanner";
 @use "./Pages/boutique/productCard/productCard";
@@ -77,4 +79,5 @@
 // ADMIN //
 
 @use "./Pages/admin/admin";
-@use "./Pages/admin/form/createProduct";
+@use "./Pages/admin/form/adminForm";
+@use "./Pages/admin/modifyProduct/modifyProduct";

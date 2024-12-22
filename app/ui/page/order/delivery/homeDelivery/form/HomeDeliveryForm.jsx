@@ -11,7 +11,6 @@ export default function HomeDeliveryForm({
   userInfo,
   setUserInfo,
 }) {
-  console.log(deliveryInfo);
 
   return (
     <form>

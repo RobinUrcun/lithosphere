@@ -18,7 +18,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LogInForm() {
-  const { setIsUserLog } = useContext(AuthContext);
+  const { setIsUserLog, setUserRole } = useContext(AuthContext);
   const router = useRouter();
   return (
     <form
@@ -38,18 +38,12 @@ export default function LogInForm() {
           }),
           credentials: "include",
         })
-          .then(() => {
+          .then((data) => {
+            setUserRole(data.userRole);
+
             localStorage.removeItem("cart");
             setIsUserLog(true);
-            const previousPage = document.referrer;
-            if (
-              previousPage &&
-              (!previousPage.includes("404") || !previousPage.includes("admin"))
-            ) {
-              router.back();
-            } else {
-              router.push("/boutique");
-            }
+            router.push("/boutique");
           })
           .catch(() => {
             toast.error("Mail ou mot de passe invalide");

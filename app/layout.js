@@ -12,6 +12,9 @@ export const metadata = {
 // Import Cookies //
 import { cookies } from "next/headers";
 
+// Import JWT //
+import jwt from "jsonwebtoken";
+
 // Import Components //
 import Header from "./ui/layout/Header";
 import Footer from "./ui/layout/Footer";
@@ -20,13 +23,21 @@ import Footer from "./ui/layout/Footer";
 import AuthProvider from "./context/AuthContext";
 
 export default async function RootLayout({ children }) {
+  let tokenRole = undefined;
   const cookieStore = await cookies();
+
   const isUserConnected = cookieStore.get("userToken") ? true : false;
+
+  if (isUserConnected) {
+    const token = cookieStore.get("userToken").value;
+    const decryptToken = jwt.verify(token, process.env.BCRYPTCRYPTAGE);
+    tokenRole = decryptToken.userRole;
+  }
 
   return (
     <html lang="fr">
       <body className={inter.className}>
-        <AuthProvider isUserConnected={isUserConnected}>
+        <AuthProvider isUserConnected={isUserConnected} tokenRole={tokenRole}>
           <Header />
           <main>{children}</main>
           <Footer />

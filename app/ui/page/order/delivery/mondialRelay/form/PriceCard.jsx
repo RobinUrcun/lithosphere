@@ -8,10 +8,8 @@ import shippingFunctionMR from "@/app/utils/shippingFunction/shippingFunctionMR"
 import shippingFunctionCM from "@/app/utils/shippingFunction/shippingFunctionCM";
 
 export default function PriceCard({ deliveryInfo, delivery }) {
-  console.log(delivery);
 
   const { productList, setProductList } = useContext(OrderContext);
-  console.log(productList);
 
   const [shippingPrice, setShippingPrice] = useState(0);
   const totalCart = productList.reduce(
@@ -23,11 +21,9 @@ export default function PriceCard({ deliveryInfo, delivery }) {
       setShippingPrice(0);
     } else {
       if (delivery === "CP") {
-        console.log("CP");
 
         setShippingPrice(shippingFunctionCM(productList, deliveryInfo.country));
       } else {
-        console.log("MR");
 
         setShippingPrice(shippingFunctionMR(productList, deliveryInfo.country));
       }

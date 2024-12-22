@@ -53,8 +53,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
               : true
           }
           createOrder={async () => {
-            console.log("createordre");
-
             if (
               deliveryInfoRef.current.deliveryCompany &&
               deliveryInfoRef.current.road &&
@@ -65,8 +63,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
               validName.test(userInfoRef.current.userName) &&
               validNumber.test(userInfoRef.current.phone)
             ) {
-              console.log("ok regex");
-
               try {
                 const response = await fetch(
                   "http://localhost:3000/api/user/orders",
@@ -82,7 +78,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
                   }
                 );
                 const orderData = await response.json();
-                console.log(orderData);
 
                 if (orderData.id) {
                   return orderData.id;
@@ -94,16 +89,13 @@ export default function Paypal({ deliveryInfo, userInfo }) {
                   throw new Error(errorMessage);
                 }
               } catch (error) {
-                console.log("erreur paypal");
+                toast.error("Champs manquants");
               }
             } else {
-              console.log("PAS ok regex");
-
               toast.error("Champs manquants");
             }
           }}
           onApprove={async (data, actions) => {
-            console.log("fect ok");
 
             try {
               const response = await fetch(
@@ -120,7 +112,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
                   }),
                 }
               );
-              console.log("fect ok");
 
               const orderData = await response.json();
               const errorDetail = orderData?.details?.[0];

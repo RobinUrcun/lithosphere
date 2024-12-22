@@ -29,8 +29,6 @@ export async function addToCart(isUserLog, productId) {
     const panierJSON = JSON.stringify(lsPanier);
     localStorage.setItem("cart", panierJSON);
   } else {
-    console.log("utilisateur log");
-
     try {
       const response = await fetch("http://localhost:3000/api/user/cart/", {
         method: "PUT",
@@ -52,5 +50,4 @@ export async function addToCart(isUserLog, productId) {
       throw new Error();
     }
   }
-  console.log(localStorage.getItem("cart"));
 }

@@ -13,7 +13,6 @@ export default async function page({ params }) {
     `https://mineraux83-api.vercel.app/api/product/${id}`,
     { method: "GET", headers: { "Content-Type": "application/json" } }
   );
-  console.log(response);
   if (!response) {
     notFound();
   }

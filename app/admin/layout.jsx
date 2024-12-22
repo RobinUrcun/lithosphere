@@ -8,19 +8,15 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 // Import Components //
-import AdminNav from "../ui/page/mon-compte/nav/AdminNav";
+import AdminNav from "../ui/page/admin/AdminNav";
 
 export default async function layout({ children }) {
   const cookieStore = await cookies();
   const userToken = cookieStore.get("userToken");
   if (!userToken) {
-    console.log("incorrect");
-
     return redirect("/auth/logIn");
   }
   try {
-    console.log("cookies token", userToken);
-
     const response = await fetchData("http://localhost:3000/api/user/role", {
       method: "GET",
       headers: {
@@ -29,7 +25,6 @@ export default async function layout({ children }) {
       },
       credentials: "include",
     });
-    console.log(response.role);
 
     if (response.role !== "ADMIN") {
       throw new Error("Role ADMIN requis");

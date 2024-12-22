@@ -27,8 +27,6 @@ export default function OrderProvider({ children }) {
         }
       })
       .catch(() => {
-        console.log("fasle user");
-
         setIsUserLog(false);
         router.push("/auth/logIn");
       });

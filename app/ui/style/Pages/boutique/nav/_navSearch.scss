@@ -1,0 +1,19 @@
+.categorie {
+  form {
+    display: flex;
+    flex-direction: row;
+    input {
+      -webkit-box-shadow: 0 0 0 30px white inset;
+      border-bottom: 1px solid grey;
+      outline: none;
+      width: 100%;
+      font-size: 20px;
+      padding: 0 15px;
+    }
+    button {
+      border: none;
+      background-color: unset;
+      cursor: pointer;
+    }
+  }
+}

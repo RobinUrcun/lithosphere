@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 // Select  Librairy //
 const Select = dynamic(() => import("react-select"), { ssr: false });
 import options from "@/app/utils/ShopCategories/shopCategories.json";
+import { selectStyles } from "@/app/ui/components/Select/selectStyles";
 
 // Import Toast //
 import { ToastContainer, toast } from "react-toastify";
@@ -34,7 +35,6 @@ export default function CreateProduct() {
     for (let i = 0; i < elements.file.files.length; i++) {
       formData.append("files", elements.file.files[i]);
     }
-    console.log(formData);
     fetch("http://localhost:3000/api/product", {
       method: "POST",
       credentials: "include",
@@ -53,21 +53,6 @@ export default function CreateProduct() {
         setIsLoading(false);
         toast.error("Une erreur s'est produite");
       });
-  };
-
-  const selectStyles = {
-    control: (styles) => ({
-      ...styles,
-      backgroundColor: "white",
-    }),
-    option: (styles) => ({ ...styles, color: "grey" }),
-    dropdownIndicator: (style) => ({
-      ...style,
-      color: "grey",
-      svg: {
-        fill: "grey",
-      },
-    }),
   };
 
   return (

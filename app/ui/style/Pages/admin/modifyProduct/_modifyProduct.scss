@@ -1,0 +1,26 @@
+.modifyWrapper {
+  .productListWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    row-gap: 30px;
+    column-gap: 30px;
+    h2 {
+      margin-bottom: 0;
+    }
+    .loadMoreBar {
+      width: 100%;
+
+      .loadMore {
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 10px 20px;
+        width: fit-content;
+        color: grey;
+        margin: auto;
+        border: 2px solid grey;
+      }
+    }
+  }
+}

@@ -12,7 +12,6 @@ export default function ProductCard({
   isUserLog,
   setIsUserLog,
 }) {
-  console.log(product);
 
   const router = useRouter();
   return (

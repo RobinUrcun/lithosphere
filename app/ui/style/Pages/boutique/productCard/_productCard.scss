@@ -5,7 +5,7 @@
   min-height: 250px;
   min-width: 250px;
 
-  a {
+  .imgWrapper {
     display: block;
     position: relative;
     img {
@@ -42,6 +42,7 @@
     column-gap: 20px;
     padding: 10px 0;
     .productCardName {
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -52,10 +53,34 @@
         font-weight: 500;
         color: #4f4d4d;
         font-weight: 400;
+        margin-bottom: 0;
       }
       .price {
         color: #4f4d4d;
         font-weight: 400;
+      }
+      .modifyWrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        color: #4f4d4d;
+        font-size: 20px;
+        font-weight: 400;
+
+        .modifyButton {
+          color: #4f4d4d;
+          text-decoration: none;
+        }
+        .deleteButton {
+          cursor: pointer;
+        }
+
+        .modifyButton:hover,
+        .deleteButton:hover {
+          text-decoration: underline;
+        }
       }
     }
     .productCardAdd {

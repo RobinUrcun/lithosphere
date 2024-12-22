@@ -21,7 +21,6 @@ export default function DeliveryCard({ title, image }) {
       (total, produit) => total + produit.price,
       0
     );
-    console.log(totalCart);
 
     if (totalCart > 8000) {
       setShippingPrice(0);

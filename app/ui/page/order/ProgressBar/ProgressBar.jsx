@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function ProgressBar() {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <div className="progressBar">

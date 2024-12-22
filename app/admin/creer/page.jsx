@@ -1,15 +1,10 @@
 import React from "react";
 
 // Import Components //
-import CreateProduct from "@/app/ui/components/Form/createProduct/CreateProduct";
+import CreateProduct from "@/app/ui/page/admin/creer/CreateProduct";
 
 export default function page() {
-  return (
-    <article className="createArticle">
-      <h2>Créer un nouvel article</h2>
-      <CreateProduct />
-    </article>
-  );
+  return <CreateProduct />;
 }
 
 // const submitProduct = (e) => {

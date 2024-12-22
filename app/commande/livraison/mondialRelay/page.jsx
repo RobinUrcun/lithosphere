@@ -26,9 +26,6 @@ export default function page() {
     userSurname: "",
     phone: "",
   });
-  console.log(userInfo);
-
-  console.log(deliveryInfo);
 
   return (
     <article className="mondialRelayArticle">

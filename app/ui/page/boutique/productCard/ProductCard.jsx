@@ -9,7 +9,10 @@ import AddToCart from "./AddToCart/AddToCart";
 export default function ProductCard({ product }) {
   return (
     <div className="productCardContainer">
-      <Link href={`/boutique/${product.categories[0]}/${product._id}`}>
+      <Link
+        className="imgWrapper"
+        href={`/boutique/${product.categories[0]}/${product._id}`}
+      >
         <img
           src={`https://lithosphere83-bucket.s3.eu-west-3.amazonaws.com/upload/${product.mainFile[0]}`}
           alt={`Visitez ${product.title}`}

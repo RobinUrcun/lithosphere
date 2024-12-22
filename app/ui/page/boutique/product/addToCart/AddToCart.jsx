@@ -4,9 +4,13 @@ import React, { useContext } from "react";
 
 // Import Functions //
 import { addToCart } from "@/app/utils/functions/cart/addToCart";
-import { AuthContext } from "@/app/context/AuthContext";
 
 // Import Context //
+import { AuthContext } from "@/app/context/AuthContext";
+
+// Import Toast //
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function AddToCart({ productId }) {
   const { isUserLog, setIsUserLog } = useContext(AuthContext);
@@ -16,14 +20,26 @@ export default function AddToCart({ productId }) {
       onClick={() => {
         addToCart(isUserLog, productId)
           .then(() => {
-            console.log("ici mettre alerte succes");
+            toast.success("Article ajouté");
           })
-          .catch((err) => {
-            console.log("ici mettre alerte echec");
+          .catch(() => {
+            toast.error("Une erreur s'est produite");
           });
       }}
     >
-      Ajouter au panier
+      <p>Ajouter au panier </p>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 }

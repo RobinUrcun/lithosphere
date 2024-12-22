@@ -11,10 +11,12 @@ import stoneCategories from "@/app/utils/ShopCategories/stoneCategories.json";
 
 // Import components //
 import NavCategorie from "./NavCategorie";
+import NavSearch from "./NavSearch";
 
 export default function Nav() {
   return (
     <nav className="boutiqueNav">
+      <NavSearch />
       <NavCategorie list={jewelCategories} title="Bijoux" />
       <NavCategorie list={fossilCategories} title="Fossiles" />
       <NavCategorie list={otherCategories} title="Autres" />

@@ -3,4 +3,13 @@
   display: flex;
   flex-direction: row;
   column-gap: 90px;
+  article {
+    padding: 0 30px;
+    flex: 1;
+    h2 {
+      font-size: clamp(30px, 3vw, 40px);
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+  }
 }

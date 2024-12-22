@@ -12,14 +12,22 @@ import accountIcon from "@/public/icons/account.svg";
 import { AuthContext } from "@/app/context/AuthContext";
 
 export default function NavAccompt() {
-  const { isUserLog, setIsUserLog } = useContext(AuthContext);
+  const { isUserLog, setIsUserLog, userRole } = useContext(AuthContext);
 
   return (
     <nav id="accompte-nav">
       <Link href={"/commande/panier"}>
         <Image src={basketIcon} alt="" width={35} height={35} />
       </Link>
-      <Link href={isUserLog ? "/mon-compte" : "/auth/logIn"}>
+      <Link
+        href={
+          !isUserLog
+            ? "/auth/logIn"
+            : userRole === "ADMIN"
+            ? "/admin/modifier"
+            : "/mon-compte"
+        }
+      >
         <Image src={accountIcon} alt="" width={35} height={35} />
       </Link>
       {isUserLog ? (
@@ -34,7 +42,7 @@ export default function NavAccompt() {
                   setIsUserLog(false);
                 }
               })
-              .catch((err) => console.log(err));
+              .catch((err) => {});
           }}
           className="cross"
         >

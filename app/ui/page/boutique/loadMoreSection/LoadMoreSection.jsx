@@ -18,12 +18,10 @@ export default function LoadMoreSection({ categorie }) {
       { method: "GET", headers: { "Content-Type": "application/json" } }
     )
       .then((data) => {
-        console.log(data.stones);
         setProductList([...productList, ...data.stones]);
         setPage(page + 1);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -37,7 +35,6 @@ export default function LoadMoreSection({ categorie }) {
     });
   }, []);
 
-  console.log(productList);
 
   return (
     <React.Fragment>

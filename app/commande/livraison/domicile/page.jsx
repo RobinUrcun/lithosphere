@@ -24,8 +24,6 @@ export default function page() {
     userSurname: "",
     phone: "",
   });
-  console.log("user info", userInfo);
-  console.log("delivery info", deliveryInfo);
 
   return (
     <article className="homeDeliveryArticle">

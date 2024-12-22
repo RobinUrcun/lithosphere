@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import Components //
-import LinkCard from "../../../components/LinkCard/LinkCard";
+import LinkCard from "../../components/LinkCard/LinkCard";
 
 export default function AdminNav() {
   return (

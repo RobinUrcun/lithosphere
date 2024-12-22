@@ -5,7 +5,6 @@ import React from "react";
 
 export default function OrderIdCard() {
   const pathName = usePathname();
-  console.log(pathName);
 
   const orderId = pathName.split("/")[2];
 

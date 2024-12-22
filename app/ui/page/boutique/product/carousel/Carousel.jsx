@@ -9,8 +9,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Carousel({ mainFile, file }) {
-  console.log(file);
-
   return (
     // <div>to</div>
     <Swiper
