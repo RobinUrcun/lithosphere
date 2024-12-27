@@ -7,10 +7,50 @@ header {
   justify-content: space-between;
   column-gap: 50px;
 
+  .headerLogo {
+    @media screen and (max-width: 500px) {
+      width: 170px;
+      height: auto;
+    }
+  }
+
   .headerNav {
     display: flex;
     flex-direction: row;
     column-gap: 30px;
+    z-index: 999;
+    position: relative;
+    &.isOpen {
+      transform: translateX(0) !important;
+    }
+    @media screen and (max-width: 1050px) {
+      position: fixed;
+      flex-direction: column-reverse;
+      justify-content: space-around;
+      right: 0;
+      top: 0;
+      padding: 0 65px;
+      height: 100%;
+      transform: translateX(100%);
+      background-color: white;
+    }
+    #user-nav {
+      display: flex;
+      flex-direction: row;
+      @media screen and (max-width: 1050px) {
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-around;
+      }
+    }
+    #accompte-nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      @media screen and (max-width: 1050px) {
+        margin-top: 80px;
+      }
+    }
     #user-nav,
     #accompte-nav {
       text-wrap: nowrap;
@@ -19,26 +59,58 @@ header {
       font-size: 20px;
       align-items: center;
       font-weight: 200;
+
       a {
         color: white;
         text-decoration: none;
-      }
-      .cross {
-        width: 30px;
-        transform: rotate(45deg);
-        position: relative;
-        .crossBar {
-          width: 30px;
-          height: 2px;
-          background-color: white;
-          position: absolute;
-          left: 0;
-          top: 50%;
-          &:nth-child(1) {
-            transform: rotate(90deg);
-          }
+        @media screen and (max-width: 1050px) {
+          color: black;
         }
       }
+      @media screen and (max-width: 1050px) {
+        img {
+          filter: invert(1);
+        }
+      }
+    }
+  }
+  .mobileBtnMenu {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+
+    @media screen and (max-width: 1050px) {
+      display: block;
+    }
+    .bar {
+      width: 100%;
+      height: 4px;
+      margin-top: 4px;
+      background-color: gold;
+    }
+  }
+  .closeBtnMenu {
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    position: absolute;
+    .bar {
+      width: 30px;
+      height: 3px;
+      background-color: black;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      &:nth-child(1) {
+        transform: rotate(90deg);
+      }
+    }
+    @media screen and (max-width: 1050px) {
+      display: block;
+      top: 20px;
+      left: 20px;
     }
   }
 }

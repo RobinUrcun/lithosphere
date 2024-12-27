@@ -1,8 +1,15 @@
 .learnMoreSection {
-  padding: 20px 50px;
+  padding: 20px 70px;
   display: flex;
   flex-direction: row;
+  row-gap: 50px;
   column-gap: 50px;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 20px 20px;
+  }
   article {
     flex: 3;
     display: flex;
@@ -11,18 +18,20 @@
     justify-content: center;
     align-items: center;
     h2 {
-      font-size: clamp(30px, 2.5vw, 40px);
+      font-size: clamp(29px, 2.5vw, 40px);
       text-align: center;
     }
     p {
-      margin: 0 60px;
-      font-size: clamp(18px, 1.5vw, 25px);
+      font-size: clamp(15px, 2vw, 20px);
       font-weight: 300;
       text-align: justify;
     }
   }
   aside {
     flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img {
       width: 100%;
       height: auto;

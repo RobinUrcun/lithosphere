@@ -4,9 +4,9 @@ import Link from "next/link";
 
 // Import Image //
 import Image from "next/image";
-import logo from "@/public/assets/logo.webp";
 import basketIcon from "@/public/icons/basket.webp";
 import accountIcon from "@/public/icons/account.svg";
+import logOutIcon from "@/public/icons/logOut.svg";
 
 // Import Context //
 import { AuthContext } from "@/app/context/AuthContext";
@@ -31,7 +31,11 @@ export default function NavAccompt() {
         <Image src={accountIcon} alt="" width={35} height={35} />
       </Link>
       {isUserLog ? (
-        <div
+        <Image
+          src={logOutIcon}
+          alt=""
+          width={35}
+          height={35}
           onClick={() => {
             fetch("http://localhost:3000/api/user/logout", {
               method: "POST",
@@ -44,11 +48,7 @@ export default function NavAccompt() {
               })
               .catch((err) => {});
           }}
-          className="cross"
-        >
-          <div className="crossBar"></div>
-          <div className="crossBar"></div>
-        </div>
+        />
       ) : null}
     </nav>
   );

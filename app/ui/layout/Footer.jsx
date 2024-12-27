@@ -10,7 +10,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer>
-      <Image src={logo} width={280} height={96} alt={""} />
+      <Image
+        className="footerLogo"
+        src={logo}
+        width={280}
+        height={96}
+        alt={""}
+      />
       <nav>
         <Link href={""}>Accueil</Link>
         <Link href={""}>Boutique</Link>

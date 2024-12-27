@@ -11,7 +11,7 @@ export default function LearnMore() {
   return (
     <section className="learnMoreSection">
       <article>
-        <h2>Qui sommes-nous ?</h2>
+        <h2>Qui sommes-nous?</h2>
         <p>
           Fort de mon expérience en tant que prospecteur et lapidaire
           spécialisé, je mets à votre disposition une expertise unique dans le

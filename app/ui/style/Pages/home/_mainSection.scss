@@ -2,10 +2,12 @@
   background-color: black;
   display: flex;
   flex-direction: row;
-  article,
-  aside {
-    padding: 30px;
+  padding: 50px;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    padding: 20px;
   }
+
   aside {
     flex: 2;
     display: flex;
@@ -17,6 +19,12 @@
       opacity: 0.2;
       filter: blur(2px);
     }
+    @media screen and (max-width: 1050px) {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
   article {
     flex: 3;
@@ -26,12 +34,12 @@
     color: white;
     row-gap: 30px;
     h1 {
-      font-size: clamp(40px, 4vw, 60px);
+      font-size: clamp(35px, 3.5vw, 50px);
       font-weight: 500;
     }
     p {
       line-height: 1.2;
-      font-size: 18px;
+      font-size: clamp(15px, 1.5vw, 30px);
       font-weight: 200;
     }
     .mainButton {

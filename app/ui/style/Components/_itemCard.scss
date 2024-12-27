@@ -35,7 +35,10 @@
   }
   h3 {
     margin-top: 10px;
-    font-size: clamp(15px, 1.5vw, 25px);
+    font-size: clamp(12px, 1.5vw, 25px);
     font-weight: 500;
+    text-wrap: nowrap;
+    @media screen and (max-width: 700px) {
+    }
   }
 }
