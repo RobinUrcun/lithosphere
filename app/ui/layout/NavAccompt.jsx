@@ -25,7 +25,7 @@ export default function NavAccompt() {
             ? "/auth/logIn"
             : userRole === "ADMIN"
             ? "/admin/modifier"
-            : "/mon-compte"
+            : "/mon-compte/informations"
         }
       >
         <Image src={accountIcon} alt="" width={35} height={35} />

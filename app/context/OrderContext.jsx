@@ -17,23 +17,33 @@ export default function OrderProvider({ children }) {
   const { isUserLog, setIsUserLog } = useContext(AuthContext);
   const [productList, setProductList] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    setIsLoading(true);
     fetchCartProduct(isUserLog)
       .then((data) => {
         if (data) {
           setProductList(data);
+          setIsLoading(false);
         } else {
           setProductList([]);
+          setIsLoading(false);
         }
       })
       .catch(() => {
         setIsUserLog(false);
         router.push("/auth/logIn");
+        setIsLoading(false);
       });
   }, [isUserLog]);
   return (
     <OrderContext.Provider
-      value={{ productList: productList, setProductList: setProductList }}
+      value={{
+        productList: productList,
+        setProductList: setProductList,
+        isLoading: isLoading,
+      }}
     >
       {children}
     </OrderContext.Provider>

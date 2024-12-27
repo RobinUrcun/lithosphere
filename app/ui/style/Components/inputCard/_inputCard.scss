@@ -7,6 +7,49 @@
   position: relative;
   border: none;
   color: rgb(95, 94, 94);
+  display: flex;
+  flex-direction: row;
+
+  .help {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border: 1px solid grey;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    .helpBtn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover + .helpContent {
+        display: block;
+      }
+    }
+    .helpContent {
+      font-size: 17px;
+      display: none;
+      line-height: 1.2;
+      position: absolute;
+      min-width: 300px;
+      border: 1px solid grey;
+      padding: 20px;
+      z-index: 99;
+      left: calc(100% + 10px);
+      border-radius: 10px;
+      background-color: rgb(246, 225, 225);
+    }
+  }
+  .helpDisplay {
+    opacity: 1;
+  }
 
   &::after {
     content: "";

@@ -19,6 +19,7 @@
 @use "./Components/accountNav/accountNav";
 @use "./Components/accountNav/linkCard/linkCard";
 @use "./Components/noProductFind/noProductFind";
+@use "./Components/loader/loader";
 
 // HOMEPAGE //
 
@@ -76,8 +77,15 @@
 
 @use "./Pages/auth/signUp/signUp";
 
-// ADMIN //
+// ACCOUNT //
 
-@use "./Pages/admin/admin";
-@use "./Pages/admin/form/adminForm";
-@use "./Pages/admin/modifyProduct/modifyProduct";
+@use "./Pages/account/account";
+
+// ADMIN //
+@use "./Pages/account/admin/form/adminForm";
+@use "./Pages/account/admin/modifyProduct/modifyProduct";
+@use "./Pages/account/admin/order/orderAdmin";
+@use "./Pages/account/admin/sale/sale";
+
+// MON COMPTE //
+@use "./Pages/account/monCompte/monCompte";

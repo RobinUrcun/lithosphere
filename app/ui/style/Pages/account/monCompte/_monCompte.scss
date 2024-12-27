@@ -1,0 +1,85 @@
+.accountInfoForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  .mail {
+    font-size: 22px;
+    font-weight: 200;
+  }
+  .inputForm {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    label {
+      text-wrap: nowrap;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    .inputWrapper {
+      position: relative;
+      display: flex;
+      min-height: 30px;
+      align-items: center;
+      .help {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        border: 1px solid grey;
+        width: 25px;
+        height: 25px;
+        position: relative;
+        .helpBtn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover + .helpContent {
+            display: block;
+          }
+        }
+        .helpContent {
+          font-size: 17px;
+          display: none;
+          line-height: 1.2;
+          position: absolute;
+          min-width: 300px;
+          border: 1px solid grey;
+          padding: 20px;
+          z-index: 99;
+          left: calc(100% + 10px);
+          border-radius: 10px;
+          background-color: rgb(246, 225, 225);
+        }
+      }
+      .helpDisplay {
+        opacity: 1;
+      }
+
+      input {
+        font-size: 20px;
+        padding: 0 0 0 5px;
+        max-width: 300px;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(196, 194, 194);
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}

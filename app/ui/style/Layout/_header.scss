@@ -7,30 +7,36 @@ header {
   justify-content: space-between;
   column-gap: 50px;
 
-  #user-nav,
-  #accompte-nav {
-    text-wrap: nowrap;
+  .headerNav {
     display: flex;
+    flex-direction: row;
     column-gap: 30px;
-    font-size: 20px;
-    font-weight: 200;
-    a {
-      color: white;
-      text-decoration: none;
-    }
-    .cross {
-      width: 30px;
-      transform: rotate(45deg);
-      position: relative;
-      .crossBar {
+    #user-nav,
+    #accompte-nav {
+      text-wrap: nowrap;
+      display: flex;
+      column-gap: 30px;
+      font-size: 20px;
+      align-items: center;
+      font-weight: 200;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .cross {
         width: 30px;
-        height: 2px;
-        background-color: white;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        &:nth-child(1) {
-          transform: rotate(90deg);
+        transform: rotate(45deg);
+        position: relative;
+        .crossBar {
+          width: 30px;
+          height: 2px;
+          background-color: white;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          &:nth-child(1) {
+            transform: rotate(90deg);
+          }
         }
       }
     }

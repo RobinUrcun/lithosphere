@@ -1,0 +1,43 @@
+.saleArticle {
+  .saleWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    h3 {
+      font-size: clamp(20px, 1.8vw, 30px);
+      font-weight: 500;
+    }
+    .orderInfoClient,
+    .orderInfoDelivery {
+      border: 1px grey solid;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      h4 {
+        font-size: clamp(20px, 1.6vw, 25px);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .orderInfoWrapper {
+        font-size: clamp(17px, 1.3vw, 23px);
+
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+        & p:nth-child(1) {
+          font-weight: 500;
+        }
+        .orderInfoTable {
+          border-collapse: separate;
+
+          border-spacing: 20px 5px;
+        }
+      }
+    }
+  }
+  .backButton {
+    margin-bottom: 20px;
+  }
+}

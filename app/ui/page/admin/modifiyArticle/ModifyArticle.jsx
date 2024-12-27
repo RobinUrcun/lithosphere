@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 // Import Components //
 import ProductCard from "@/app/ui/page/admin/modifiyArticle/productCard/ProductCard";
 import NoProductFind from "@/app/ui/page/boutique/productCard/noProductFInd/NoProductFind";
+import Loader from "@/app/ui/components/loader/Loader";
 
 // Import Functions  //
 import { fetchData } from "@/app/utils/functions/fetchData";
@@ -14,7 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ModifyArticle() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [productList, setProductList] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -45,13 +46,15 @@ export default function ModifyArticle() {
           setIsLoading(false);
         }
       })
-      .catch((err) => {});
+      .catch((err) => {
+        setIsLoading(false);
+      });
   }, []);
 
   return (
     <div className="modifyWrapper">
       {isLoading ? (
-        <p>loading ...</p>
+        <Loader />
       ) : !productList.length ? (
         <NoProductFind />
       ) : (

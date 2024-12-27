@@ -16,7 +16,7 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
 // Import Components //
-import Header from "./ui/layout/Header";
+import Header from "./ui/layout/header/Header";
 import Footer from "./ui/layout/Footer";
 
 // Import Context //

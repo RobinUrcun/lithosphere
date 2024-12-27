@@ -34,7 +34,7 @@ export default async function layout({ children }) {
   }
 
   return (
-    <section className="adminSection">
+    <section className="accountSection">
       <AdminNav />
       {children}
     </section>

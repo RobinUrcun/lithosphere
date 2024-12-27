@@ -11,13 +11,17 @@ import { selectStyles } from "@/app/ui/components/Select/selectStyles";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// Import Components //
+import SpinnerLoader from "@/app/ui/components/loader/SpinnerLoader";
+
 export default function CreateProduct() {
   const [select, setIsSelect] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isSpinner, setIsSpinner] = useState(false);
   const submitProduct = (e) => {
-    setIsLoading(true);
     e.preventDefault();
     e.stopPropagation();
+    setIsSpinner(true);
+
     const elements = e.target.elements;
     const formData = new FormData();
 
@@ -42,15 +46,15 @@ export default function CreateProduct() {
     })
       .then((response) => {
         if (response.status === 201) {
-          setIsLoading(false);
+          setIsSpinner(false);
           toast.success("Article ajouté");
         } else {
-          setIsLoading(false);
+          setIsSpinner(false);
           toast.error("Une erreur s'est produite");
         }
       })
       .catch((error) => {
-        setIsLoading(false);
+        setIsSpinner(false);
         toast.error("Une erreur s'est produite");
       });
   };
@@ -115,7 +119,11 @@ export default function CreateProduct() {
         accept="image/png, image/jpeg"
         multiple
       />
-      <button className="mainButton">creer</button>
+      {isSpinner ? (
+        <SpinnerLoader />
+      ) : (
+        <button className="mainButton">creer</button>
+      )}
       <ToastContainer
         position="bottom-right"
         autoClose={5000}

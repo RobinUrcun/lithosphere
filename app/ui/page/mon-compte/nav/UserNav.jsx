@@ -5,9 +5,11 @@ import LinkCard from "../../../components/LinkCard/LinkCard";
 
 export default function UserNav() {
   return (
-    <nav>
+    <nav className="accountNav">
+      <h1>Mon compte</h1>
+
       <LinkCard href={"/mon-compte/informations"} title={"Mes informations"} />
-      <LinkCard href="/mon-compte/achat" title={"Mes achats"} />
+      <LinkCard href="/mon-compte/commandes" title={"Mes commandes"} />
     </nav>
   );
 }

@@ -18,55 +18,59 @@ import { AuthContext } from "@/app/context/AuthContext";
 // Import Components //
 import ProductCard from "./ProductCard";
 import { OrderContext } from "@/app/context/OrderContext";
+import Loader from "@/app/ui/components/loader/Loader";
 
 export default function CartComponent() {
   const { isUserLog, setIsUserLog } = useContext(AuthContext);
 
-  const { productList, setProductList } = useContext(OrderContext);
+  const { productList, setProductList, isLoading } = useContext(OrderContext);
   const totalCart = productList.reduce(
     (total, produit) => total + produit.price,
     0
   );
-
-  return (
-    <React.Fragment>
-      {productList.length > 0
-        ? productList.map((product, index) => (
-            <ProductCard
-              key={product._id + index}
-              product={product}
-              productList={productList}
-              setProductList={setProductList}
-              isUserLog={isUserLog}
-              setIsUserLog={setIsUserLog}
-            />
-          ))
-        : null}
-      {!totalCart ? null : (
-        <div className="totalRow">
-          Total :{" "}
-          {(totalCart / 100).toLocaleString("fr-FR", {
-            style: "currency",
-            currency: "EUR",
-            minimumFractionDigits: 2,
-          })}
-        </div>
-      )}
-      {isUserLog ? (
-        !productList.length ? (
-          <Link className="mainButton" href={"/boutique"}>
-            Boutique
-          </Link>
+  if (isLoading) {
+    return <Loader />;
+  } else {
+    return (
+      <React.Fragment>
+        {productList.length > 0
+          ? productList.map((product, index) => (
+              <ProductCard
+                key={product._id + index}
+                product={product}
+                productList={productList}
+                setProductList={setProductList}
+                isUserLog={isUserLog}
+                setIsUserLog={setIsUserLog}
+              />
+            ))
+          : null}
+        {!totalCart ? null : (
+          <div className="totalRow">
+            Total :{" "}
+            {(totalCart / 100).toLocaleString("fr-FR", {
+              style: "currency",
+              currency: "EUR",
+              minimumFractionDigits: 2,
+            })}
+          </div>
+        )}
+        {isUserLog ? (
+          !productList.length ? (
+            <Link className="mainButton" href={"/boutique"}>
+              Boutique
+            </Link>
+          ) : (
+            <Link className="mainButton" href={"/commande/livraison"}>
+              Etape suivante
+            </Link>
+          )
         ) : (
-          <Link className="mainButton" href={"/commande/livraison"}>
-            Etape suivante
+          <Link className="mainButton" href={"/auth/logIn"}>
+            Se Connecter
           </Link>
-        )
-      ) : (
-        <Link className="mainButton" href={"/auth/logIn"}>
-          Se Connecter
-        </Link>
-      )}
-    </React.Fragment>
-  );
+        )}
+      </React.Fragment>
+    );
+  }
 }
