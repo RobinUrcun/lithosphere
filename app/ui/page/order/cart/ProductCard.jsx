@@ -12,7 +12,6 @@ export default function ProductCard({
   isUserLog,
   setIsUserLog,
 }) {
-
   const router = useRouter();
   return (
     <div className="cartWrapper">
@@ -29,7 +28,7 @@ export default function ProductCard({
 
         <div className="cartQty">
           <form className="cartQtyWrapper">
-            <label htmlFor="quantity">Quantité :</label>
+            <label htmlFor="quantity">Quantité:</label>
             <select id="quantity">
               <option value="1">1</option>
             </select>

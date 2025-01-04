@@ -15,7 +15,7 @@ export const fetchCartProduct = async function (isUserLog) {
         throw new Error();
       }
     } else {
-      return;
+      return [];
     }
   } else {
     try {

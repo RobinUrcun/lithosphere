@@ -2,16 +2,21 @@
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  max-width: 450px;
+  .mainButton {
+    margin: auto;
+  }
+
   .mail {
-    font-size: 22px;
+    font-size: clamp(14px, 1.5vw, 20px);
     font-weight: 200;
   }
   .inputForm {
-    font-size: 20px;
-    width: 100%;
+    font-size: clamp(14px, 1.5vw, 20px);
     display: flex;
     flex-direction: row;
     column-gap: 10px;
+
     label {
       text-wrap: nowrap;
       font-weight: 500;
@@ -23,6 +28,7 @@
       display: flex;
       min-height: 30px;
       align-items: center;
+      flex: 1;
       .help {
         border-radius: 50%;
         display: flex;
@@ -51,11 +57,11 @@
           display: none;
           line-height: 1.2;
           position: absolute;
-          min-width: 300px;
+          min-width: 200px;
           border: 1px solid grey;
           padding: 20px;
           z-index: 99;
-          left: calc(100% + 10px);
+          right: calc(100% + 10px);
           border-radius: 10px;
           background-color: rgb(246, 225, 225);
         }
@@ -65,9 +71,9 @@
       }
 
       input {
-        font-size: 20px;
+        font-size: clamp(14px, 1.5vw, 20px);
         padding: 0 0 0 5px;
-        max-width: 300px;
+        width: 100%;
       }
       &::after {
         content: "";

@@ -8,6 +8,10 @@
     flex-direction: row;
     column-gap: 50px;
     padding: 20px;
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      padding: 0;
+    }
 
     .paiementWrapper {
       flex: 1;
@@ -41,9 +45,11 @@
           flex-direction: row;
           column-gap: 20px;
           flex: 1;
-          .inputCard {
-            flex: 1;
-            min-width: 80px;
+          .inputCard:nth-child(1) {
+            flex: 2;
+          }
+          .inputCard:nth-child(2) {
+            flex: 3;
           }
         }
       }

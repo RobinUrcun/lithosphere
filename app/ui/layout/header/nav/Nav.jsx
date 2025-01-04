@@ -13,12 +13,40 @@ export default function Nav() {
     <React.Fragment>
       <div className={`headerNav ${isOpen ? "isOpen" : ""}`}>
         <nav id="user-nav">
-          <Link href={"/"}>Accueil</Link>
-          <Link href={"/boutique"}>Boutique</Link>
-          <Link href={"/about"}>A propos</Link>
-          <Link href={"/contact"}>Nous contacter</Link>
+          <Link
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href={"/"}
+          >
+            Accueil
+          </Link>
+          <Link
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href={"/boutique"}
+          >
+            Boutique
+          </Link>
+          <Link
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href={"/about"}
+          >
+            A propos
+          </Link>
+          <Link
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            href={"/contact"}
+          >
+            Nous contacter
+          </Link>
         </nav>
-        <NavAccompt />
+        <NavAccompt isOpen={isOpen} setIsOpen={setIsOpen} />
         <div
           className="closeBtnMenu"
           onClick={() => {

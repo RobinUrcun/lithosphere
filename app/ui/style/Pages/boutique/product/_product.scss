@@ -23,20 +23,40 @@
 
 .productPage {
   display: flex;
+  max-width: calc(100vw - 340px);
   flex-direction: row;
   flex: 1;
   column-gap: 40px;
+  row-gap: 40px;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    max-width: calc(100vw - 20px);
+  }
   .productCarousel {
     flex: 2;
-    max-width: 350px;
-    height: 500px;
+    min-width: 100px;
+
+    width: 100%;
+
+    // @media screen and (max-width: 1000px) and (min-width: 950px) {
+    //   max-width: 600px;
+    // }
+    // @media screen and (max-width: 950px) and (min-width: 900px) {
+    //   max-width: 500px;
+    // }
   }
   .productInfo {
     display: flex;
+    flex: 3;
     flex-direction: column;
     row-gap: 30px;
-    flex: 3;
     font-size: clamp(17px, 1.5vw, 20px);
+    @media screen and (max-width: 800px) {
+      margin-top: 30px;
+    }
 
     h1 {
       font-size: clamp(30px, 2.5vw, 50px);
@@ -54,8 +74,12 @@
       background-color: rgb(241, 241, 241);
       display: flex;
       flex-direction: row;
+      column-gap: 15px;
       justify-content: space-between;
       border-radius: 5px;
+      @media screen and (max-width: 500px) {
+        padding: 30px 10px;
+      }
       .productPrice,
       .productWeight,
       .productSize {
@@ -64,6 +88,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-wrap: nowrap;
         row-gap: 10px;
         & p:nth-child(2) {
           font-size: clamp(20px, 2vw, 40px);

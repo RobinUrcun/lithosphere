@@ -47,7 +47,10 @@ export default function ContactMap() {
 
   return (
     <div className="map">
-      <div ref={mapContainerRef} style={{ height: "100%" }} />
+      <div
+        ref={mapContainerRef}
+        style={{ height: "100%", minHeight: "300px" }}
+      />
     </div>
   );
 }

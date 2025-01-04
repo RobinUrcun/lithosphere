@@ -5,6 +5,10 @@
   align-items: stretch;
   height: auto;
   column-gap: 30px;
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    padding: 10px;
+  }
 
   .mainArticle {
     overflow: hidden;
@@ -18,9 +22,11 @@
     .collections {
       padding: 30px 0;
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: center;
-      column-gap: 40px;
+      column-gap: 30px;
+      row-gap: 20px;
     }
   }
   .boutiqueCategory {

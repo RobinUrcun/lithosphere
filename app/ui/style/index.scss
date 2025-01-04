@@ -77,6 +77,22 @@
 
 @use "./Pages/auth/signUp/signUp";
 
+// FORGET PASSWORD //
+
+@use "./Pages/auth/forgetPassword/forgetPassword";
+
+// SENT PASSWORD //
+
+@use "./Pages/auth/sentPassword/sentPassword";
+
+// RESET PASSWORD //
+
+@use "./Pages/auth/resetPassword/resetPassword";
+
+// RESET PASSWORD SUCCESS  //
+
+@use "./Pages/auth/resetPasswordSuccess/resetPasswordSuccess";
+
 // ACCOUNT //
 
 @use "./Pages/account/account";

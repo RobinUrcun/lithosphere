@@ -45,7 +45,7 @@ export default async function BoutiqueCategory({ params }) {
 
   return (
     <article className="boutiqueCategory">
-      <h1>Nos {categorie}</h1>
+      <h1>{categorie}</h1>
       <div className="productListWrapper">
         {product.length > 0 ? (
           <React.Fragment>

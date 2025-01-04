@@ -21,7 +21,7 @@ export default function ProgressBar() {
           >
             2
           </div>
-          <div className="stepTitle">Mode de livraison</div>
+          <div className="stepTitle">Livraison</div>
         </div>
         <div className="step">
           <div
@@ -33,7 +33,7 @@ export default function ProgressBar() {
           >
             3
           </div>
-          <div className="stepTitle">Informations de livraison</div>
+          <div className="stepTitle">Informations</div>
         </div>
       </div>
     </div>

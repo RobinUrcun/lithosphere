@@ -8,7 +8,6 @@ import shippingFunctionMR from "@/app/utils/shippingFunction/shippingFunctionMR"
 import shippingFunctionCM from "@/app/utils/shippingFunction/shippingFunctionCM";
 
 export default function PriceCard({ deliveryInfo, delivery }) {
-
   const { productList, setProductList } = useContext(OrderContext);
 
   const [shippingPrice, setShippingPrice] = useState(0);
@@ -21,10 +20,8 @@ export default function PriceCard({ deliveryInfo, delivery }) {
       setShippingPrice(0);
     } else {
       if (delivery === "CP") {
-
         setShippingPrice(shippingFunctionCM(productList, deliveryInfo.country));
       } else {
-
         setShippingPrice(shippingFunctionMR(productList, deliveryInfo.country));
       }
     }
@@ -51,7 +48,7 @@ export default function PriceCard({ deliveryInfo, delivery }) {
             })}
       </div>
       <div className="totalPriceWrapper">
-        total :{" "}
+        Total :{" "}
         {(
           ((shippingPrice === "Livraison offerte" ? 0 : shippingPrice) +
             totalCart) /

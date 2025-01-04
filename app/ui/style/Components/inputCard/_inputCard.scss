@@ -1,7 +1,6 @@
 .inputCard {
   width: 100%;
-  max-width: 400px;
-  min-width: 300px;
+
   background-color: white;
   font-size: 20px;
   position: relative;
@@ -38,11 +37,11 @@
       display: none;
       line-height: 1.2;
       position: absolute;
-      min-width: 300px;
+      min-width: 200px;
       border: 1px solid grey;
       padding: 20px;
       z-index: 99;
-      left: calc(100% + 10px);
+      right: calc(100% + 10px);
       border-radius: 10px;
       background-color: rgb(246, 225, 225);
     }

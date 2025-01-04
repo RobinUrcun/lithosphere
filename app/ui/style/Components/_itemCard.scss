@@ -1,7 +1,9 @@
 .itemCardContainer {
   flex: 1;
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 300px;
+  max-width: 300px;
+  min-height: 130px;
+  min-width: 130px;
 
   a {
     display: block;
@@ -35,8 +37,8 @@
   }
   h3 {
     margin-top: 10px;
-    font-size: clamp(12px, 1.5vw, 25px);
-    font-weight: 500;
+    font-size: clamp(15px, 1.5vw, 25px);
+    font-weight: 600;
     text-wrap: nowrap;
     @media screen and (max-width: 700px) {
     }

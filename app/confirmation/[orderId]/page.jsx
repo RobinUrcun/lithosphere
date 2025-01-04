@@ -18,7 +18,7 @@ export default function page() {
       </article>
       <aside>
         <p>Retrouvez les détails de votre commande dans l'espace mon compte</p>
-        <Link className="mainButton" href={"/mon-compte"}>
+        <Link className="mainButton" href={"/mon-compte/commandes"}>
           Mon compte
         </Link>
       </aside>

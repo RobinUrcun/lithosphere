@@ -16,7 +16,9 @@ export default function PresentationCard({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <Image src={imgUrl} height={imgHeight} width={imgWidth} alt={title} />
+      <div className="presentationCardImg">
+        <Image src={imgUrl} height={imgHeight} width={imgWidth} alt={title} />
+      </div>
     </div>
   );
 }
