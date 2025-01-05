@@ -14,7 +14,7 @@ export default async function Header() {
         src={logo}
         width={280}
         height={96}
-        alt={""}
+        alt={"Lithosphere 83"}
         priority
       />
       <Nav />

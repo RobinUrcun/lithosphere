@@ -4,6 +4,7 @@
   flex-direction: column;
   row-gap: 50px;
   .map {
+    z-index: 10;
     height: 100%;
     min-height: 300px;
     flex: 3;

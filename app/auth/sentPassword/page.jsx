@@ -1,6 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
+export const metadata = {
+  title: "Email Envoyé - Vérifiez votre Boîte de Réception | Lithosphere 83",
+  description:
+    "Un lien de réinitialisation de mot de passe a été envoyé à votre adresse e-mail. Vérifiez votre boîte de réception et suivez les instructions pour accéder à votre compte Lithosphere 83.",
+};
+
 export default function page() {
   return (
     <section className="sentPasswordSection">

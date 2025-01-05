@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 // Import Image //
 import Image from "next/image";
-import basketPicture from "@/public/icons/basket.svg";
+import basketPicture from "@/public/icons/addBasket.svg";
 
 // Import Add to Cart Function //
 import { addToCart } from "@/app/utils/functions/cart/addToCart";

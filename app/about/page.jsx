@@ -9,6 +9,12 @@ import standPicture from "@/public/assets/boutique/banner.webp";
 import articlePicture from "@/public/assets/about/articlePicture.webp";
 import shedPicture from "@/public/assets/about/shedPicture.webp";
 
+export const metadata = {
+  title: "À Propos - Lithosphere 83 : Artisan Minéralier à Aups (Var)",
+  description:
+    "Découvrez l'histoire de Lithosphere 83, artisan minéralier à Aups (Var). Passionné par les pierres naturelles, nous collectons et travaillons des minéraux du Var, de la Corse et du monde entier. Polissage, découpe et créations uniques : un savoir-faire authentique.",
+};
+
 export default function page() {
   return (
     <section className="aboutSection">

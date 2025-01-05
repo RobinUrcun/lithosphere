@@ -2,9 +2,9 @@ import React from "react";
 
 // Import Image //
 
-import ammonitePicture from "@/public/assets/collections/ammonitePicture.jpg";
-import boisFossilPicture from "@/public/assets/collections/boisFossilPicture.jpg";
-import shellfishPicture from "@/public/assets/collections/shellfishPicture.jpg";
+import ammonitePicture from "@/public/assets/collections/ammonitePicture.webp";
+import boisFossilPicture from "@/public/assets/collections/boisFossilPicture.webp";
+import shellfishPicture from "@/public/assets/collections/shellfishPicture.webp";
 
 // Import Components //
 import ItemCard from "@/app/ui/components/ItemCard";

@@ -37,7 +37,6 @@ export default function UserInformationsForm() {
     setIsSpinner(true);
 
     const elements = e.target;
-    console.log(elements);
     if (
       validName.test(elements.name.value) &&
       validName.test(elements.surname.value) &&
@@ -51,7 +50,6 @@ export default function UserInformationsForm() {
 
         newPassword: elements.newPassword.value,
       };
-      console.log(formValue);
 
       fetch("http://localhost:3000/api/user/userInfo", {
         method: "PUT",
@@ -62,8 +60,7 @@ export default function UserInformationsForm() {
         credentials: "include",
       })
         .then((response) => {
-          console.log(response);
-          console.log(response.ok);
+ 
 
           if (response.ok) {
             setIsSpinner(false);
@@ -115,7 +112,6 @@ export default function UserInformationsForm() {
         router.push("/auth/logIn");
       });
   }, []);
-  console.log(userInfo);
 
   if (isLoading) {
     return <Loader />;

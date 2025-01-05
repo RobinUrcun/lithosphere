@@ -5,7 +5,7 @@ import Link from "next/link";
 
 // Import Image //
 import Image from "next/image";
-import learnMorePicture from "@/public/assets/learnMorePicture.jpg";
+import learnMorePicture from "@/public/assets/learnMorePicture.webp";
 
 export default function LearnMore() {
   return (
@@ -24,7 +24,12 @@ export default function LearnMore() {
         </Link>
       </article>
       <aside>
-        <Image src={learnMorePicture} height={500} width={600} alt="" />
+        <Image
+          src={learnMorePicture}
+          height={500}
+          width={600}
+          alt="Un produit proposé à la vente"
+        />
       </aside>
     </section>
   );

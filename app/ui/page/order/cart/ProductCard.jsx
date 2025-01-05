@@ -13,12 +13,13 @@ export default function ProductCard({
   setIsUserLog,
 }) {
   const router = useRouter();
+
   return (
     <div className="cartWrapper">
       <div className="cartProductImgWrapper">
         <img
           src={`https://lithosphere83-bucket.s3.eu-west-3.amazonaws.com/upload/${product.mainFile[0]}`}
-          alt="Votre produit"
+          alt={product?.title}
         />
       </div>
       <div className="cartResponsiveWrapper">

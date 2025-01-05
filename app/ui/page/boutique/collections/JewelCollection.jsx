@@ -2,8 +2,8 @@ import React from "react";
 
 // Import Image //
 
-import braceletPicture from "@/public/assets/collections/jewelPicture.jpg";
-import pendantPicture from "@/public/assets/collections/pendantPicture.jpg";
+import braceletPicture from "@/public/assets/collections/jewelPicture.webp";
+import pendantPicture from "@/public/assets/collections/pendantPicture.webp";
 
 // Import Components //
 import ItemCard from "@/app/ui/components/ItemCard";

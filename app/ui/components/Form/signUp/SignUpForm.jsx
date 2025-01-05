@@ -31,7 +31,6 @@ export default function SignUpForm() {
     mail: "",
     password: "",
   });
-  console.log(validName.test(form.mail));
 
   return (
     <form
@@ -66,8 +65,6 @@ export default function SignUpForm() {
               localStorage.removeItem("cart");
 
               setIsUserLog(true);
-              console.log("ok");
-              console.log("userRole", data.userRole);
 
               setUserRole(data.userRole);
 
@@ -76,8 +73,6 @@ export default function SignUpForm() {
               router.push("/boutique");
             })
             .catch(() => {
-              console.log("erreur pas normal");
-
               setIsSpinner(false);
 
               toast.error("Adresse mail déjà utilisée");

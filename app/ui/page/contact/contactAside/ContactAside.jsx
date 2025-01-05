@@ -5,8 +5,8 @@ import { DynamicMap } from "./map/DynamicMap";
 import InfoCard from "./infoCard/InfoCard";
 
 // Import Image //
-import phoneLogo from "@/public/icons/logo_phone.png";
-import mailLogo from "@/public/icons/logo_mail.png";
+import phoneLogo from "@/public/icons/logo_phone.webp";
+import mailLogo from "@/public/icons/logo_mail.webp";
 
 export default function ContactAside() {
   return (

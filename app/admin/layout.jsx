@@ -5,10 +5,16 @@ import { fetchData } from "../utils/functions/fetchData";
 
 // Import Cookies //
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 // Import Components //
 import AdminNav from "../ui/page/admin/AdminNav";
+
+export const metadata = {
+  title: "Administration - Gestion des Produits | Lithosphere 83",
+  description:
+    "Accédez à l'interface d'administration de Lithosphere 83 pour gérer vos produits. Ajoutez, modifiez ou supprimez des minéraux, bijoux artisanaux et autres articles de la boutique. Optimisez votre catalogue en toute simplicité.",
+};
 
 export default async function layout({ children }) {
   const cookieStore = await cookies();
@@ -30,7 +36,7 @@ export default async function layout({ children }) {
       throw new Error("Role ADMIN requis");
     }
   } catch (error) {
-    redirect("/404");
+    notFound();
   }
 
   return (

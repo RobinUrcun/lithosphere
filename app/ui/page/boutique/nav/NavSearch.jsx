@@ -28,7 +28,7 @@ export default function NavSearch() {
       >
         <p>Rechercher</p>
         <p className={isCategorieOpen ? "rotate" : ""}>
-          <Image src={arrow} width={20} height={20} alt="arrow" />
+          <Image src={arrow} width={20} height={20} alt="Flèche" />
         </p>
       </div>
       <div className={`categorieList ${isCategorieOpen ? "open" : ""}`}>

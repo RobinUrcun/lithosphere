@@ -40,7 +40,6 @@ export default function page() {
     mainFile: [],
     file: [],
   });
-  console.log(product);
 
   const submitForm = function (e) {
     setIsSpinner(true);
@@ -57,7 +56,6 @@ export default function page() {
     formData.append("weight", elements.weight.value);
     formData.append("origin", elements.origin.value);
     formData.append("reference", elements.reference.value);
-    console.log(product.categories);
 
     for (let index = 0; index < product.categories.length; index++) {
       formData.append("categories", product.categories[index]);
@@ -98,7 +96,6 @@ export default function page() {
       headers: { "Content-Type": "application/json" },
     })
       .then((data) => {
-        console.log(data[0]);
 
         setProduct(data[0]);
         setIsLoading(false);
@@ -205,7 +202,6 @@ export default function page() {
                 : []
             }
             onChange={(e) => {
-              console.log(e);
 
               setProduct({ ...product, categories: e.map((cat) => cat.value) });
             }}

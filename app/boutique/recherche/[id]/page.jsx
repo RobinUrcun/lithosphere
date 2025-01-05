@@ -42,8 +42,7 @@ export default function page() {
           setIsLoading(false);
         }
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }, []);
 
   return (

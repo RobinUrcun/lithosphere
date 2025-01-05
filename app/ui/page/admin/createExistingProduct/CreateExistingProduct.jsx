@@ -34,7 +34,6 @@ export default function CreateExistingProduct() {
     reference: "",
     categories: "",
   });
-  console.log(product);
 
   const submitForm = function (e) {
     setIsSpinner(true);
@@ -50,7 +49,6 @@ export default function CreateExistingProduct() {
     formData.append("weight", elements.weight.value);
     formData.append("origin", elements.origin.value);
     formData.append("reference", elements.reference.value);
-    console.log(product.categories);
 
     for (let index = 0; index < product.categories.length; index++) {
       formData.append("categories", product.categories[index]);
@@ -192,7 +190,6 @@ export default function CreateExistingProduct() {
               : []
           }
           onChange={(e) => {
-            console.log(e);
 
             setProduct({ ...product, categories: e.map((cat) => cat.value) });
           }}

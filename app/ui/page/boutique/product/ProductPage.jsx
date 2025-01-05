@@ -11,7 +11,11 @@ export default function ProductPage({ product }) {
   return (
     <article className="productPage">
       <div className="productCarousel">
-        <Carousel mainFile={product.mainFile} file={product.file} />
+        <Carousel
+          title={product.title}
+          mainFile={product.mainFile}
+          file={product.file}
+        />
       </div>
       <div className="productInfo">
         <h1>{product.title}</h1>

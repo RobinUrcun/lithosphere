@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 // Import Image //
 import Image from "next/image";
-import basketPicture from "@/public/icons/basket.svg";
+import basketPicture from "@/public/icons/addBasket.svg";
 
 // Import Link //
 import Link from "next/link";
@@ -14,10 +14,11 @@ import { fetchCartProduct } from "@/app/utils/functions/cart/fetchCartProduct";
 
 // Import Context //
 import { AuthContext } from "@/app/context/AuthContext";
+import { OrderContext } from "@/app/context/OrderContext";
 
 // Import Components //
 import ProductCard from "./ProductCard";
-import { OrderContext } from "@/app/context/OrderContext";
+
 import Loader from "@/app/ui/components/loader/Loader";
 
 export default function CartComponent() {
@@ -33,18 +34,26 @@ export default function CartComponent() {
   } else {
     return (
       <React.Fragment>
-        {productList.length > 0
-          ? productList.map((product, index) => (
-              <ProductCard
-                key={product._id + index}
-                product={product}
-                productList={productList}
-                setProductList={setProductList}
-                isUserLog={isUserLog}
-                setIsUserLog={setIsUserLog}
-              />
-            ))
-          : null}
+        {productList.length > 0 ? (
+          productList.map((product, index) => (
+            <ProductCard
+              key={product._id + index}
+              product={product}
+              productList={productList}
+              setProductList={setProductList}
+              isUserLog={isUserLog}
+              setIsUserLog={setIsUserLog}
+            />
+          ))
+        ) : (
+          <Image
+            className="noProductFoundImg"
+            src={basketPicture}
+            alt="panier"
+            width={100}
+            height={100}
+          />
+        )}
         {!totalCart ? null : (
           <div className="totalRow">
             Total :{" "}

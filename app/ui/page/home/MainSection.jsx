@@ -2,7 +2,7 @@ import React from "react";
 
 // Import Image //
 import Image from "next/image";
-import mainImage from "@/public/assets/homePagePicture.png";
+import mainImage from "@/public/assets/homePagePicture.webp";
 
 // Import Link //
 import Link from "next/link";
@@ -22,13 +22,13 @@ export default function MainSection() {
         </Link>
       </article>
       <aside>
-        <Image src={mainImage} height={240} width={400} alt="" />
+        <Image src={mainImage} height={240} width={400} alt="Un mineraux" />
         <Image
           className="reflection"
           src={mainImage}
           height={240}
           width={400}
-          alt=""
+          alt="Un mineraux"
         />
       </aside>
     </section>

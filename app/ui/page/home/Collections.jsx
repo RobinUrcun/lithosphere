@@ -7,9 +7,9 @@ import Link from "next/link";
 import ItemCard from "../../components/ItemCard";
 
 // Import collection Image //
-import amethystePicture from "@/public/assets/collections/amethystePicture.jpg";
-import jewelPicture from "@/public/assets/collections/jewelPicture.jpg";
-import CreasyLacePicture from "@/public/assets/collections/creasyLacePicture.jpg";
+import amethystePicture from "@/public/assets/collections/amethystePicture.webp";
+import jewelPicture from "@/public/assets/collections/jewelPicture.webp";
+import CreasyLacePicture from "@/public/assets/collections/creasyLacePicture.webp";
 
 export default function Collections() {
   return (

@@ -1,30 +1,19 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 
 // Import Link //
 import Link from "next/link";
 
 // Import Components //
-import HomeDeliveryForm from "@/app/ui/page/order/delivery/homeDelivery/form/HomeDeliveryForm";
-import PriceCard from "@/app/ui/page/order/delivery/mondialRelay/form/PriceCard";
-import Paypal from "@/app/ui/components/Paypal/Paypal";
+
+import HomeDeliveryComponent from "@/app/ui/page/order/delivery/homeDelivery/HomeDeliveryComponent";
+
+export const metadata = {
+  title: "Renseignez vos Informations de Livraison | Lithosphere 83",
+  description:
+    "Saisissez vos coordonnées pour la livraison de vos minéraux et bijoux artisanaux Lithosphere 83. Livraison personnalisée et en toute sécurité.",
+};
 
 export default function page() {
-  const [deliveryInfo, setDeliveryInfo] = useState({
-    name: "",
-    road: "",
-    CP: "",
-    city: "",
-    country: "FR",
-    id: "",
-    deliveryCompany: "CP",
-  });
-  const [userInfo, setUserInfo] = useState({
-    userName: "",
-    userSurname: "",
-    phone: "",
-  });
-
   return (
     <article className="homeDeliveryArticle">
       <div className="navBar">
@@ -32,21 +21,7 @@ export default function page() {
           retour
         </Link>
       </div>
-      <div className="articleWrapper">
-        <div className="formWrapper">
-          <h1>Information de livraison</h1>
-          <HomeDeliveryForm
-            deliveryInfo={deliveryInfo}
-            setDeliveryInfo={setDeliveryInfo}
-            userInfo={userInfo}
-            setUserInfo={setUserInfo}
-          />
-        </div>
-        <div className="paiementWrapper">
-          <PriceCard deliveryInfo={deliveryInfo} delivery="CP" />
-          <Paypal deliveryInfo={deliveryInfo} userInfo={userInfo} />
-        </div>
-      </div>
+      <HomeDeliveryComponent />
     </article>
   );
 }

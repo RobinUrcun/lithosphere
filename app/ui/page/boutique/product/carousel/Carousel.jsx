@@ -8,9 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function Carousel({ mainFile, file }) {
+export default function Carousel({ mainFile, file, title }) {
   return (
-    // <div>to</div>
     <Swiper
       navigation={true}
       pagination={true}
@@ -21,14 +20,14 @@ export default function Carousel({ mainFile, file }) {
       <SwiperSlide>
         <img
           src={`https://lithosphere83-bucket.s3.eu-west-3.amazonaws.com/upload/${mainFile}`}
-          alt=""
+          alt={title}
         />
       </SwiperSlide>
       {file.map((img, index) => (
         <SwiperSlide key={index}>
           <img
             src={`https://lithosphere83-bucket.s3.eu-west-3.amazonaws.com/upload/${img}`}
-            alt=""
+            alt={title}
           />
         </SwiperSlide>
       ))}

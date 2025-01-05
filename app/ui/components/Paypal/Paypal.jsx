@@ -22,6 +22,7 @@ export default function Paypal({ deliveryInfo, userInfo }) {
   const deliveryInfoRef = useRef(deliveryInfo);
   const userInfoRef = useRef(userInfo);
 
+
   useEffect(() => {
     deliveryInfoRef.current = deliveryInfo;
   }, [deliveryInfo]);
@@ -77,9 +78,11 @@ export default function Paypal({ deliveryInfo, userInfo }) {
                     }),
                   }
                 );
+
                 const orderData = await response.json();
 
                 if (orderData.id) {
+
                   return orderData.id;
                 } else {
                   const errorDetail = orderData?.details?.[0];
@@ -96,7 +99,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
             }
           }}
           onApprove={async (data, actions) => {
-
             try {
               const response = await fetch(
                 `http://localhost:3000/api/user/orders/${data.orderID}/capture`,

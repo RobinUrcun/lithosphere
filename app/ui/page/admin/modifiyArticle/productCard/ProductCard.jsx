@@ -14,7 +14,6 @@ export default function ProductCard({ product, productList, setProductList }) {
       credentials: "include",
     })
       .then((response) => {
-        console.log(response.status);
 
         if (response.status === 200) {
           const filterProducts = productList.filter((singleProduct) => {

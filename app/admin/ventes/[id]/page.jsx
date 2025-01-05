@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 // Import Link //
@@ -11,21 +11,34 @@ import ClientInfo from "@/app/ui/page/admin/clientInfo/ClientInfo";
 import OrderInfo from "@/app/ui/page/admin/orderInfo/OrderInfo";
 
 export default function page() {
+  const router = useRouter();
   const params = useParams();
 
   const [order, setOrder] = useState();
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    setIsLoading(true);
     fetch(`http://localhost:3000/api/user/order/${params.id}`, {
       method: "GET",
       credentials: "include",
     })
       .then((response) => {
-        response.json().then((data) => {
-          setOrder(data.data[0]);
-        });
+        if (response.ok) {
+          response.json().then((data) => {
+            setOrder(data.data[0]);
+            setIsLoading(false);
+          });
+        } else {
+          setIsLoading(false);
+          router.push("/auth/logIn");
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setIsLoading(false);
+        router.push("/auth/logIn");
+      });
   }, []);
 
   return (

@@ -15,7 +15,7 @@ export default function Footer() {
         src={logo}
         width={280}
         height={96}
-        alt={""}
+        alt={"Lithosphere 83"}
       />
       <nav>
         <Link href={""}>Accueil</Link>

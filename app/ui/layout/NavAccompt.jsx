@@ -42,7 +42,7 @@ export default function NavAccompt({ isOpen, setIsOpen }) {
         }}
         href={"/commande/panier"}
       >
-        <Image src={basketIcon} alt="" width={35} height={35} />
+        <Image src={basketIcon} alt="panier" width={35} height={35} />
       </Link>
       {isUserLog ? (
         <Link
@@ -55,7 +55,7 @@ export default function NavAccompt({ isOpen, setIsOpen }) {
             setIsOpen(!isOpen);
           }}
         >
-          <Image src={accountIcon} alt="" width={35} height={35} />
+          <Image src={accountIcon} alt="compte" width={35} height={35} />
         </Link>
       ) : (
         <div
@@ -65,7 +65,7 @@ export default function NavAccompt({ isOpen, setIsOpen }) {
           className={`accountLink `}
           ref={dropdownRef}
         >
-          <Image src={accountIcon} alt="" width={35} height={35} />
+          <Image src={accountIcon} alt="compte" width={35} height={35} />
           <div className={`authNav ${isLogNavOpen ? "open" : ""}`}>
             <Link
               href={"/auth/logIn"}
@@ -99,7 +99,7 @@ export default function NavAccompt({ isOpen, setIsOpen }) {
       {isUserLog ? (
         <Image
           src={logOutIcon}
-          alt=""
+          alt="Déconnexion"
           width={35}
           height={35}
           onClick={() => {
@@ -111,7 +111,6 @@ export default function NavAccompt({ isOpen, setIsOpen }) {
                 if (response.ok) {
                   setIsUserLog(false);
                   setIsOpen(false);
-                  console.log("oklougout");
 
                   window.location.reload();
                 }

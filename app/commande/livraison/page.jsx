@@ -6,6 +6,12 @@ import Link from "next/link";
 // Import Components //
 import DeliveryComponent from "@/app/ui/page/order/delivery/DeliveryComponent";
 
+export const metadata = {
+  title: "Choisissez votre Mode de Livraison | Lithosphere 83",
+  description:
+    "Sélectionnez l’option de livraison qui vous convient pour vos achats Lithosphere 83. Livraison rapide, sécurisée et adaptée à vos besoins.",
+};
+
 export default function page() {
   return (
     <article className="deliverySection">

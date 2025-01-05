@@ -22,7 +22,6 @@ export default function ImgCard({ picture, typeOfFile, data, setData }) {
           setData({ ...data, file: newFiles });
         })
         .catch((error) => {
-          console.log(error);
         });
 
       const newFiles = data.file.filter((url) => {
@@ -47,7 +46,6 @@ export default function ImgCard({ picture, typeOfFile, data, setData }) {
           setData({ ...data, mainFile: [] });
         })
         .catch((error) => {
-          console.log(error);
         });
     }
   };
@@ -56,7 +54,7 @@ export default function ImgCard({ picture, typeOfFile, data, setData }) {
       <img
         className="picture"
         src={`https://lithosphere83-bucket.s3.eu-west-3.amazonaws.com/upload/${picture}`}
-        alt=""
+        alt={data.title}
       />
       <div
         className="pictureDelete"
