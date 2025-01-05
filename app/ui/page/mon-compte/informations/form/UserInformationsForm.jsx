@@ -51,7 +51,7 @@ export default function UserInformationsForm() {
         newPassword: elements.newPassword.value,
       };
 
-      fetch("http://localhost:3000/api/user/userInfo", {
+      fetch("https://lithosphere-api.vercel.app/api/user/userInfo", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -60,8 +60,6 @@ export default function UserInformationsForm() {
         credentials: "include",
       })
         .then((response) => {
- 
-
           if (response.ok) {
             setIsSpinner(false);
 
@@ -93,7 +91,7 @@ export default function UserInformationsForm() {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch("http://localhost:3000/api/user/userInfo", {
+    fetch("https://lithosphere-api.vercel.app/api/user/userInfo", {
       method: "GET",
 
       credentials: "include",

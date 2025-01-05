@@ -1,6 +1,6 @@
 // export function removeFromCart(productId, userInfo) {
 //   if (userInfo.isUserConnected) {
-//     fetch("https://mineraux83-api.vercel.app/api/user/cart/", {
+//     fetch("https://lithosphere-api.vercel.app/api/user/cart/", {
 //       method: "DELETE",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -26,17 +26,20 @@ export async function removeFromCart(isUserLog, productId) {
     localStorage.setItem("cart", JSON.stringify(newLsPanier));
   } else {
     try {
-      const response = await fetch("http://localhost:3000/api/user/cart/", {
-        method: "DELETE",
-        credentials: "include",
+      const response = await fetch(
+        "https://lithosphere-api.vercel.app/api/user/cart/",
+        {
+          method: "DELETE",
+          credentials: "include",
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          articleId: productId,
-        }),
-      });
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            articleId: productId,
+          }),
+        }
+      );
       if (response.ok) {
         return "succes";
       } else {

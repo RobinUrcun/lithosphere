@@ -9,16 +9,16 @@ import ProductPage from "@/app/ui/page/boutique/product/ProductPage";
 import NoProductFind from "@/app/ui/page/boutique/productCard/noProductFInd/NoProductFind";
 
 export default async function page({ params }) {
-  const { id } = params; 
+  const { id } = await params;
 
   try {
     const data = await fetchData(
-      `https://mineraux83-api.vercel.app/api/product/${id}`,
+      `https://lithosphere-api.vercel.app/api/product/${id}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     );
 
     if (!data || data.length === 0) {
-      notFound(); 
+      notFound();
     }
 
     return <ProductPage product={data[0]} />;

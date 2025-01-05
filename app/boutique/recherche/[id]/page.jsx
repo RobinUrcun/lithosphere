@@ -17,7 +17,7 @@ export default function page() {
   const params = useParams();
   const loadMore = function () {
     fetchData(
-      `http://localhost:3000/api/product?page=${page}&name=${params.id}&sort=new`,
+      `https://lithosphere-api.vercel.app/api/product?page=${page}&name=${params.id}&sort=new`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     )
       .then((data) => {
@@ -30,7 +30,7 @@ export default function page() {
   useEffect(() => {
     setIsLoading(true);
     fetchData(
-      `http://localhost:3000/api/product?page=${page}&name=${params.id}&sort=new`,
+      `https://lithosphere-api.vercel.app/api/product?page=${page}&name=${params.id}&sort=new`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     )
       .then((data) => {

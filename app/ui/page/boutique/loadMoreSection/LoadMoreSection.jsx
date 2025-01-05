@@ -14,27 +14,25 @@ export default function LoadMoreSection({ categorie }) {
 
   const loadMore = function () {
     fetchData(
-      `https://mineraux83-api.vercel.app/api/product?page=${page}&sort=new&categorie=${categorie}`,
+      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new&categorie=${categorie}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     )
       .then((data) => {
         setProductList([...productList, ...data.stones]);
         setPage(page + 1);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   };
 
   useEffect(() => {
     fetchData(
-      `https://mineraux83-api.vercel.app/api/product?page=${page}&sort=new&categorie=${categorie}`,
+      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new&categorie=${categorie}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     ).then((data) => {
       setProductList([...productList, ...data.stones]);
       setPage(page + 1);
     });
   }, []);
-
 
   return (
     <React.Fragment>

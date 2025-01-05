@@ -1,6 +1,6 @@
 // export function addToCart(article, userInfo) {
 //   if (userInfo.isUserConnected == true) {
-//     fetch("https://mineraux83-api.vercel.app/api/user/cart/", {
+//     fetch("https://lithosphere-api.vercel.app/api/user/cart/", {
 //       method: "PUT",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -30,17 +30,20 @@ export async function addToCart(isUserLog, productId) {
     localStorage.setItem("cart", panierJSON);
   } else {
     try {
-      const response = await fetch("http://localhost:3000/api/user/cart/", {
-        method: "PUT",
-        credentials: "include",
+      const response = await fetch(
+        "https://lithosphere-api.vercel.app/api/user/cart/",
+        {
+          method: "PUT",
+          credentials: "include",
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          articleId: productId,
-        }),
-      });
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            articleId: productId,
+          }),
+        }
+      );
       if (response.ok) {
         return "succes";
       } else {

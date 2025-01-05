@@ -22,7 +22,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
   const deliveryInfoRef = useRef(deliveryInfo);
   const userInfoRef = useRef(userInfo);
 
-
   useEffect(() => {
     deliveryInfoRef.current = deliveryInfo;
   }, [deliveryInfo]);
@@ -66,7 +65,7 @@ export default function Paypal({ deliveryInfo, userInfo }) {
             ) {
               try {
                 const response = await fetch(
-                  "http://localhost:3000/api/user/orders",
+                  "https://lithosphere-api.vercel.app/api/user/orders",
                   {
                     method: "POST",
                     headers: {
@@ -82,7 +81,6 @@ export default function Paypal({ deliveryInfo, userInfo }) {
                 const orderData = await response.json();
 
                 if (orderData.id) {
-
                   return orderData.id;
                 } else {
                   const errorDetail = orderData?.details?.[0];
@@ -101,7 +99,7 @@ export default function Paypal({ deliveryInfo, userInfo }) {
           onApprove={async (data, actions) => {
             try {
               const response = await fetch(
-                `http://localhost:3000/api/user/orders/${data.orderID}/capture`,
+                `https://lithosphere-api.vercel.app/api/user/orders/${data.orderID}/capture`,
                 {
                   method: "POST",
                   headers: {

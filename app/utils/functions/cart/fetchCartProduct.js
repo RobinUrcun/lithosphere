@@ -7,7 +7,9 @@ export const fetchCartProduct = async function (isUserLog) {
     if (productsId) {
       try {
         const response = await fetchData(
-          `http://localhost:3000/api/product/${productsId.join(",")}`,
+          `https://lithosphere-api.vercel.app/api/product/${productsId.join(
+            ","
+          )}`,
           { method: "GET", headers: { "Content-Type": "application/json" } }
         );
         return response;
@@ -19,13 +21,16 @@ export const fetchCartProduct = async function (isUserLog) {
     }
   } else {
     try {
-      const response = await fetchData("http://localhost:3000/api/user/cart", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+      const response = await fetchData(
+        "https://lithosphere-api.vercel.app/api/user/cart",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
 
       return response;
     } catch (error) {

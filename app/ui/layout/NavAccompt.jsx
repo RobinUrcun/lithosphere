@@ -103,7 +103,7 @@ export default function NavAccompt({ isOpen, setIsOpen }) {
           width={35}
           height={35}
           onClick={() => {
-            fetch("http://localhost:3000/api/user/logout", {
+            fetch("https://lithosphere-api.vercel.app/api/user/logout", {
               method: "POST",
               credentials: "include",
             })

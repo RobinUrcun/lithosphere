@@ -28,8 +28,8 @@ export default function page() {
 //     for (let i = 0; i < elements.file.files.length; i++) {
 //       formData.append("files", elements.file.files[i]);
 //     }
-//     // http://localhost:3000/api/product //
-//     fetch("https://mineraux83-api.vercel.app/api/product/", {
+//     // https://lithosphere-api.vercel.app/api/product //
+//     fetch("https://lithosphere-api.vercel.app/api/product/", {
 //       method: "POST",
 //       headers: {
 //         authorization: `Bearer ${localStorage.getItem("userInfoToken")}`,

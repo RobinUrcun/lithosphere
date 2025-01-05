@@ -9,12 +9,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function ProductCard({ product, productList, setProductList }) {
   const deleteProduct = function () {
-    fetch(`http://localhost:3000/api/product/singleProduct/${product._id}`, {
-      method: "DELETE",
-      credentials: "include",
-    })
+    fetch(
+      `https://lithosphere-api.vercel.app/api/product/singleProduct/${product._id}`,
+      {
+        method: "DELETE",
+        credentials: "include",
+      }
+    )
       .then((response) => {
-
         if (response.status === 200) {
           const filterProducts = productList.filter((singleProduct) => {
             return singleProduct._id !== product._id;

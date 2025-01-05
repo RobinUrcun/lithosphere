@@ -30,7 +30,7 @@ export default async function BoutiqueCategory({ params }) {
   let product = [];
   try {
     const response = await fetch(
-      `https://mineraux83-api.vercel.app/api/product?page=1&sort=new&categorie=${categorie}`,
+      `https://lithosphere-api.vercel.app/api/product?page=1&sort=new&categorie=${categorie}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     );
     if (!response) {

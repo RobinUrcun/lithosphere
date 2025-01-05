@@ -23,14 +23,17 @@ export default async function layout({ children }) {
     return redirect("/auth/logIn");
   }
   try {
-    const response = await fetchData("http://localhost:3000/api/user/role", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Cookie: userToken.value,
-      },
-      credentials: "include",
-    });
+    const response = await fetchData(
+      "https://lithosphere-api.vercel.app/api/user/role",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Cookie: userToken.value,
+        },
+        credentials: "include",
+      }
+    );
 
     if (response.role !== "ADMIN") {
       throw new Error("Role ADMIN requis");

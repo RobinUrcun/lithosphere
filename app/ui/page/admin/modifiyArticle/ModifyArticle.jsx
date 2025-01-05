@@ -20,10 +20,13 @@ export default function ModifyArticle() {
   const [page, setPage] = useState(1);
 
   const loadMore = function () {
-    fetchData(`http://localhost:3000/api/product?page=${page}&sort=new`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
+    fetchData(
+      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    )
       .then((data) => {
         setProductList([...productList, ...data.stones]);
         setPage(page + 1);
@@ -33,10 +36,13 @@ export default function ModifyArticle() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchData(`http://localhost:3000/api/product?page=${page}&sort=new`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
+    fetchData(
+      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    )
       .then((data) => {
         if (!data.total) {
           setIsLoading(false);

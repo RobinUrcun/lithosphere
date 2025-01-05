@@ -66,7 +66,7 @@ export default function page() {
       formData.append("files", elements.file.files[i]);
     }
 
-    fetch(`http://localhost:3000/api/product/${params.id}`, {
+    fetch(`https://lithosphere-api.vercel.app/api/product/${params.id}`, {
       method: "PUT",
 
       body: formData,
@@ -91,12 +91,11 @@ export default function page() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchData(`http://localhost:3000/api/product/${params.id}`, {
+    fetchData(`https://lithosphere-api.vercel.app/api/product/${params.id}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
       .then((data) => {
-
         setProduct(data[0]);
         setIsLoading(false);
       })
@@ -202,7 +201,6 @@ export default function page() {
                 : []
             }
             onChange={(e) => {
-
               setProduct({ ...product, categories: e.map((cat) => cat.value) });
             }}
           />
