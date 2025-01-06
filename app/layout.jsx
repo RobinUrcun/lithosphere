@@ -25,6 +25,7 @@ import AuthProvider from "./context/AuthContext";
 export default async function RootLayout({ children }) {
   let tokenRole = undefined;
   const cookieStore = await cookies();
+  console.log("cookie", cookieStore);
 
   const isUserConnected = cookieStore.get("userToken") ? true : false;
 

@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     row-gap: 30px;
     column-gap: 30px;
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+    }
     h2 {
       margin-bottom: 0;
     }

@@ -41,6 +41,9 @@
       padding: 20px;
       row-gap: 30px;
       column-gap: 30px;
+      @media screen and (max-width: 900px) {
+        justify-content: center;
+      }
       .loadMoreBar {
         width: 100%;
 

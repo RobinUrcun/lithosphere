@@ -18,6 +18,8 @@ export const metadata = {
 
 export default async function layout({ children }) {
   const cookieStore = await cookies();
+  console.log("store", cookieStore);
+
   const userToken = cookieStore.get("userToken");
   if (!userToken) {
     return redirect("/auth/logIn");
