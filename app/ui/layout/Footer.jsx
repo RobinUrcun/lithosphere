@@ -18,10 +18,10 @@ export default function Footer() {
         alt={"Lithosphere 83"}
       />
       <nav>
-        <Link href={""}>Accueil</Link>
-        <Link href={""}>Boutique</Link>
-        <Link href={""}>A propos</Link>
-        <Link href={""}>Nous contacter</Link>
+        <Link href={"/"}>Accueil</Link>
+        <Link href={"/boutique"}>Boutique</Link>
+        <Link href={"/about"}>A propos</Link>
+        <Link href={"/contact"}>Nous contacter</Link>
       </nav>
     </footer>
   );
