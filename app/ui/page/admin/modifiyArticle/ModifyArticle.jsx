@@ -21,7 +21,7 @@ export default function ModifyArticle() {
 
   const loadMore = function () {
     fetchData(
-      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new`,
+      `https://api.lithosphere83.fr/api/product?page=${page}&sort=new`,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ export default function ModifyArticle() {
   useEffect(() => {
     setIsLoading(true);
     fetchData(
-      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new`,
+      `https://api.lithosphere83.fr/api/product?page=${page}&sort=new`,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },

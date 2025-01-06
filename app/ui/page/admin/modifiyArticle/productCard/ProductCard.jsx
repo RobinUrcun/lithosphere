@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function ProductCard({ product, productList, setProductList }) {
   const deleteProduct = function () {
     fetch(
-      `https://lithosphere-api.vercel.app/api/product/singleProduct/${product._id}`,
+      `https://api.lithosphere83.fr/api/product/singleProduct/${product._id}`,
       {
         method: "DELETE",
         credentials: "include",

@@ -3,7 +3,7 @@ import React from "react";
 export default function ImgCard({ picture, typeOfFile, data, setData }) {
   const deletePicture = () => {
     if (typeOfFile === "file") {
-      fetch("https://lithosphere-api.vercel.app/api/product/singlePicture", {
+      fetch("https://api.lithosphere83.fr/api/product/singlePicture", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export default function ImgCard({ picture, typeOfFile, data, setData }) {
       setData({ ...data, file: newFiles });
     }
     if (typeOfFile === "mainFile") {
-      fetch("https://lithosphere-api.vercel.app/api/product/singlePicture", {
+      fetch("https://api.lithosphere83.fr/api/product/singlePicture", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

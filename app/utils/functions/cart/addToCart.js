@@ -1,6 +1,6 @@
 // export function addToCart(article, userInfo) {
 //   if (userInfo.isUserConnected == true) {
-//     fetch("https://lithosphere-api.vercel.app/api/user/cart/", {
+//     fetch("https://api.lithosphere83.fr/api/user/cart/", {
 //       method: "PUT",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export async function addToCart(isUserLog, productId) {
   } else {
     try {
       const response = await fetch(
-        "https://lithosphere-api.vercel.app/api/user/cart/",
+        "https://api.lithosphere83.fr/api/user/cart/",
         {
           method: "PUT",
           credentials: "include",

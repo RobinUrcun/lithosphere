@@ -45,7 +45,7 @@ export default function SignUpForm() {
           validEmail.test(formData.mail.value) &&
           validPassword.test(formData.password.value)
         ) {
-          fetchData("https://lithosphere-api.vercel.app/api/user/signup", {
+          fetchData("https://api.lithosphere83.fr/api/user/signup", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

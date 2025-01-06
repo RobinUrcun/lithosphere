@@ -39,7 +39,7 @@ export default function CreateProduct() {
     for (let i = 0; i < elements.file.files.length; i++) {
       formData.append("files", elements.file.files[i]);
     }
-    fetch("https://lithosphere-api.vercel.app/api/product", {
+    fetch("https://api.lithosphere83.fr/api/product", {
       method: "POST",
       credentials: "include",
       body: formData,

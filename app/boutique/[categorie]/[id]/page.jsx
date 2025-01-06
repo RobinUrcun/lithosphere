@@ -13,7 +13,7 @@ export default async function page({ params }) {
 
   try {
     const data = await fetchData(
-      `https://lithosphere-api.vercel.app/api/product/${id}`,
+      `https://api.lithosphere83.fr/api/product/${id}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     );
 

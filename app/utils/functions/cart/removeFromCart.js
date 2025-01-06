@@ -1,6 +1,6 @@
 // export function removeFromCart(productId, userInfo) {
 //   if (userInfo.isUserConnected) {
-//     fetch("https://lithosphere-api.vercel.app/api/user/cart/", {
+//     fetch("https://api.lithosphere83.fr/api/user/cart/", {
 //       method: "DELETE",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export async function removeFromCart(isUserLog, productId) {
   } else {
     try {
       const response = await fetch(
-        "https://lithosphere-api.vercel.app/api/user/cart/",
+        "https://api.lithosphere83.fr/api/user/cart/",
         {
           method: "DELETE",
           credentials: "include",

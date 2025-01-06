@@ -59,7 +59,7 @@ export default function CreateExistingProduct() {
       formData.append("files", elements.file.files[i]);
     }
 
-    fetch(`https://lithosphere-api.vercel.app/api/product`, {
+    fetch(`https://api.lithosphere83.fr/api/product`, {
       method: "POST",
 
       body: formData,
@@ -84,7 +84,7 @@ export default function CreateExistingProduct() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchData(`https://lithosphere-api.vercel.app/api/product/${params.id}`, {
+    fetchData(`https://api.lithosphere83.fr/api/product/${params.id}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })

@@ -38,7 +38,7 @@ export default function LogInForm() {
           validEmail.test(e.target.mail.value) &&
           validPassword.test(e.target.password.value)
         ) {
-          fetchData("https://lithosphere-api.vercel.app/api/user/login", {
+          fetchData("https://api.lithosphere83.fr/api/user/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

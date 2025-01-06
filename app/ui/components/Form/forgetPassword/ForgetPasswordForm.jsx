@@ -22,7 +22,7 @@ export default function ForgetPasswordForm() {
   const submitForm = (e) => {
     e.preventDefault();
     setIsLoader(true);
-    fetch("https://lithosphere-api.vercel.app/api/user/forgot-password", {
+    fetch("https://api.lithosphere83.fr/api/user/forgot-password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

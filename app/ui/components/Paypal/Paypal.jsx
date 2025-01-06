@@ -65,7 +65,7 @@ export default function Paypal({ deliveryInfo, userInfo }) {
             ) {
               try {
                 const response = await fetch(
-                  "https://lithosphere-api.vercel.app/api/user/orders",
+                  "https://api.lithosphere83.fr/api/user/orders",
                   {
                     method: "POST",
                     headers: {
@@ -99,7 +99,7 @@ export default function Paypal({ deliveryInfo, userInfo }) {
           onApprove={async (data, actions) => {
             try {
               const response = await fetch(
-                `https://lithosphere-api.vercel.app/api/user/orders/${data.orderID}/capture`,
+                `https://api.lithosphere83.fr/api/user/orders/${data.orderID}/capture`,
                 {
                   method: "POST",
                   headers: {

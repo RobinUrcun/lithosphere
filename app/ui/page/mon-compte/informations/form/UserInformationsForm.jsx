@@ -51,7 +51,7 @@ export default function UserInformationsForm() {
         newPassword: elements.newPassword.value,
       };
 
-      fetch("https://lithosphere-api.vercel.app/api/user/userInfo", {
+      fetch("https://api.lithosphere83.fr/api/user/userInfo", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export default function UserInformationsForm() {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch("https://lithosphere-api.vercel.app/api/user/userInfo", {
+    fetch("https://api.lithosphere83.fr/api/user/userInfo", {
       method: "GET",
 
       credentials: "include",

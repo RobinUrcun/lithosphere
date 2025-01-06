@@ -26,7 +26,7 @@ export default async function layout({ children }) {
   }
   try {
     const response = await fetchData(
-      "https://lithosphere-api.vercel.app/api/user/role",
+      "https://api.lithosphere83.fr/api/user/role",
       {
         method: "GET",
         headers: {

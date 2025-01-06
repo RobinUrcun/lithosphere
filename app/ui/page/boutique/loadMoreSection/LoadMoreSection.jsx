@@ -14,7 +14,7 @@ export default function LoadMoreSection({ categorie }) {
 
   const loadMore = function () {
     fetchData(
-      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new&categorie=${categorie}`,
+      `https://api.lithosphere83.fr/api/product?page=${page}&sort=new&categorie=${categorie}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     )
       .then((data) => {
@@ -26,7 +26,7 @@ export default function LoadMoreSection({ categorie }) {
 
   useEffect(() => {
     fetchData(
-      `https://lithosphere-api.vercel.app/api/product?page=${page}&sort=new&categorie=${categorie}`,
+      `https://api.lithosphere83.fr/api/product?page=${page}&sort=new&categorie=${categorie}`,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     ).then((data) => {
       setProductList([...productList, ...data.stones]);

@@ -24,7 +24,7 @@ export default function ResetPasswordForm() {
   const submitForm = (e) => {
     e.preventDefault();
     setIsLoader(true);
-    fetch("https://lithosphere-api.vercel.app/api/user/reset-password/", {
+    fetch("https://api.lithosphere83.fr/api/user/reset-password/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

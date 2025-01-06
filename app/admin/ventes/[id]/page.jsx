@@ -20,7 +20,7 @@ export default function page() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://lithosphere-api.vercel.app/api/user/order/${params.id}`, {
+    fetch(`https://api.lithosphere83.fr/api/user/order/${params.id}`, {
       method: "GET",
       credentials: "include",
     })

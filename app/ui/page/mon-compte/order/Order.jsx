@@ -15,7 +15,7 @@ export default function Order() {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch(`https://lithosphere-api.vercel.app/api/user/getClientOrders`, {
+    fetch(`https://api.lithosphere83.fr/api/user/getClientOrders`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
