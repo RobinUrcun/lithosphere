@@ -15,8 +15,8 @@ export default function NavSearch() {
   const [isCategorieOpen, setIsCategorieOpen] = useState(false);
 
   const submitForm = (e) => {
+    e.preventDefault();
     if (e.target.search.value) {
-      e.preventDefault();
       router.push(`/boutique/recherche/${e.target.search.value}`);
     }
   };
