@@ -32,7 +32,7 @@ export default function Paypal({ deliveryInfo, userInfo }) {
 
   const initialOptions = {
     "client-id":
-      "AX9ZAE5E-lwDSHZilYEFTWCvBe8Tjq_o4TmK71jBPBafceVTK9YcObsN6nJNKfeyWc_m4_qsudKh5IKi",
+      "AfT77u7iQHDBLnzCdKZ2GJ4h_UkdWqBxo5bqc56IVskEC6vViiHT2I83BCkFpYrNedWDw-bQFEAxN--l",
     currency: "EUR",
     intent: "capture",
   };
