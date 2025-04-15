@@ -24,6 +24,7 @@
 .productPage {
   display: flex;
   max-width: calc(100vw - 340px);
+  max-height: 70vh;
   flex-direction: row;
   flex: 1;
   column-gap: 40px;

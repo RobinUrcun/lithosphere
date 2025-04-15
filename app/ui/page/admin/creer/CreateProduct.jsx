@@ -35,6 +35,7 @@ export default function CreateProduct() {
     for (let index = 0; index < select.length; index++) {
       formData.append("categories", select[index].value);
     }
+    formData.append("sold", false);
     formData.append("mainFile", elements.mainFile.files[0]);
     for (let i = 0; i < elements.file.files.length; i++) {
       formData.append("files", elements.file.files[i]);
