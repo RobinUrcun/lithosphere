@@ -15,7 +15,10 @@ export default function LoadMoreSection({ categorie }) {
   const loadMore = function () {
     fetchData(
       `https://api.lithosphere83.fr/api/product?page=${page}&sort=new&categorie=${categorie}`,
-      { method: "GET", headers: { "Content-Type": "application/json" } }
+      /*`http://localhost:3000/api/product?page=${page}&sort=new&categorie=${categorie}`*/ {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
     )
       .then((data) => {
         setProductList([...productList, ...data.stones]);
@@ -27,7 +30,10 @@ export default function LoadMoreSection({ categorie }) {
   useEffect(() => {
     fetchData(
       `https://api.lithosphere83.fr/api/product?page=${page}&sort=new&categorie=${categorie}`,
-      { method: "GET", headers: { "Content-Type": "application/json" } }
+      /*`http://localhost:3000/api/product?page=${page}&sort=new&categorie=${categorie}`*/ {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
     ).then((data) => {
       setProductList([...productList, ...data.stones]);
       setPage(page + 1);

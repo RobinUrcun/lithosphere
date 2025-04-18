@@ -30,7 +30,7 @@ export default async function BoutiqueCategory({ params }) {
   let product = [];
   try {
     const response = await fetch(
-      `https://api.lithosphere83.fr/api/product?page=1&sort=new&categorie=${categorie}`,
+      `https://api.lithosphere83.fr/api/product?page=1&sort=new&categorie=${categorie}` /* `http://localhost:3000/api/product?page=1&sort=new&categorie=${categorie}`*/,
       { method: "GET", headers: { "Content-Type": "application/json" } }
     );
     if (!response) {

@@ -14,7 +14,10 @@ export default async function page({ params }) {
   try {
     const data = await fetchData(
       `https://api.lithosphere83.fr/api/product/${id}`,
-      { method: "GET", headers: { "Content-Type": "application/json" } }
+      /*`http://localhost:3000/api/product/${id}`*/ {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
     );
 
     if (!data || data.length === 0) {

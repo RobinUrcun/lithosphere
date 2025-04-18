@@ -15,22 +15,27 @@ import { AuthContext } from "@/app/context/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function AddToCart({ productId }) {
+export default function AddToCart({ productId, sold }) {
   const { isUserLog, setIsUserLog } = useContext(AuthContext);
   return (
     <div
       className="productCardAdd"
-      onClick={() => {
-        addToCart(isUserLog, productId)
-          .then(() => {
-            toast.success("Article ajouté");
-          })
-          .catch((err) => {
-            toast.error("Une erreur s'est produite");
-          });
-      }}
+      onClick={
+        sold
+          ? null
+          : () => {
+              addToCart(isUserLog, productId)
+                .then(() => {
+                  toast.success("Article ajouté");
+                })
+                .catch((err) => {
+                  toast.error("Une erreur s'est produite");
+                });
+            }
+      }
     >
       <Image
+        className={sold ? "sold" : null}
         src={basketPicture}
         width={30}
         height={30}
