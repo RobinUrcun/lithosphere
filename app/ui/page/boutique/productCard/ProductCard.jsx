@@ -9,7 +9,7 @@ import AddToCart from "./AddToCart/AddToCart";
 export default function ProductCard({ product }) {
   return (
     <div className={`productCardContainer`}>
-      <div className={`soldWrapper ${product.sold ? "appearSold" : null}`}>
+      <div className={`soldWrapper ${product.sold ? "appearSold" : ""}`}>
         VENDU
       </div>
       <div className={product.sold ? "soldItem" : null}>
