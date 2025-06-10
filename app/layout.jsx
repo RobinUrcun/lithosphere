@@ -12,6 +12,9 @@ export const metadata = {
 // Import Cookies //
 import { cookies } from "next/headers";
 
+// Google Analytics
+import GoogleAnalytics from "./ui/components/googleAnalytics/GoogleAnalytics";
+
 // Import JWT //
 import jwt from "jsonwebtoken";
 
@@ -38,6 +41,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={inter.className}>
+        <GoogleAnalytics />
         <AuthProvider isUserConnected={isUserConnected} tokenRole={tokenRole}>
           <Header />
           <main>{children}</main>
